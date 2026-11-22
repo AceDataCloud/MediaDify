@@ -1,0 +1,296 @@
+identity:
+  name: maestro_generate_video
+  author: acedatacloud
+  label:
+    en_US: Maestro Generate Video
+    zh_Hans: Maestro Generate Video
+description:
+  human:
+    en_US: Maestro Generate Video through the published Ace Data Cloud API. Preserve
+      the returned task ID and query the same service until completion.
+    zh_Hans: Maestro Generate Video through the published Ace Data Cloud API. Preserve
+      the returned task ID and query the same service until completion.
+  llm: Maestro Generate Video through the published Ace Data Cloud API. Preserve the
+    returned task ID and query the same service until completion.
+parameters:
+- name: langs
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Langs
+    zh_Hans: 输出语言 JSON 数组
+  human_description:
+    en_US: Exactly one output language per task. Defaults to zh-cn. The same per-second
+      rate applies to every language. Enter valid JSON.
+    zh_Hans: Exactly one output language per task. Defaults to zh-cn. The same per-second
+      rate applies to every language.
+  llm_description: Exactly one output language per task. Defaults to zh-cn. The same
+    per-second rate applies to every language. Enter valid JSON.
+  default: '["zh-cn"]'
+- name: style
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Style
+    zh_Hans: 视觉风格
+  human_description:
+    en_US: 'Optional visual-style preset — expressed through typography, palette,
+      motion, image treatment and pacing. Orthogonal to `scenario` (it does NOT change
+      routing). `auto` (default) lets the director pick; every other value adopts
+      a real named look: `cinematic` = dark film-noir (black + blood-red, Oswald);
+      `glass` = Apple / iOS-26 frosted liquid glass; `luxury` = timeless near-black
+      + indigo, huge whitespace; `swiss` = precise grid + electric blue + oversized
+      numerals; `modern` = clean light SaaS; `editorial` = cream magazine + serif;
+      `warm` = intimate cream + amber; `vibrant` = festive folk colour; `neon` = electric
+      neon glow; `mono` = grayscale, type-led; `pastel` = soft candy pastels; `bold`
+      = huge poster type; `industrial` = raw glitch + rust; `futuristic` = particle
+      glow. A freeform string is also accepted as a soft hint.'
+    zh_Hans: 'Optional visual-style preset — expressed through typography, palette,
+      motion, image treatment and pacing. Orthogonal to `scenario` (it does NOT change
+      routing). `auto` (default) lets the director pick; every other value adopts
+      a real named look: `cinematic` = dark film-noir (black + blood-red, Oswald);
+      `glass` = Apple / iOS-26 frosted liquid glass; `luxury` = timeless near-black
+      + indigo, huge whitespace; `swiss` = precise grid + electric blue + oversized
+      numerals; `modern` = clean light SaaS; `editorial` = cream magazine + serif;
+      `warm` = intimate cream + amber; `vibrant` = festive folk colour; `neon` = electric
+      neon glow; `mono` = grayscale, type-led; `pastel` = soft candy pastels; `bold`
+      = huge poster type; `industrial` = raw glitch + rust; `futuristic` = particle
+      glow. A freeform string is also accepted as a soft hint.'
+  llm_description: 'Optional visual-style preset — expressed through typography, palette,
+    motion, image treatment and pacing. Orthogonal to `scenario` (it does NOT change
+    routing). `auto` (default) lets the director pick; every other value adopts a
+    real named look: `cinematic` = dark film-noir (black + blood-red, Oswald); `glass`
+    = Apple / iOS-26 frosted liquid glass; `luxury` = timeless near-black + indigo,
+    huge whitespace; `swiss` = precise grid + electric blue + oversized numerals;
+    `modern` = clean light SaaS; `editorial` = cream magazine + serif; `warm` = intimate
+    cream + amber; `vibrant` = festive folk colour; `neon` = electric neon glow; `mono`
+    = grayscale, type-led; `pastel` = soft candy pastels; `bold` = huge poster type;
+    `industrial` = raw glitch + rust; `futuristic` = particle glow. A freeform string
+    is also accepted as a soft hint.'
+  default: auto
+- name: voice
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Voice
+    zh_Hans: 旁白音色
+  human_description:
+    en_US: 'Optional narration voice — the **timbre** of the voiceover, independent
+      of language. `auto` (default) lets the director pick a fitting voice. Every
+      preset can speak the language selected in `langs`, so choose purely by character
+      — `warm-female`, `bright-female`, `anchor-female`, `clean-female`, `calm-male`,
+      `deep-male`, `documentary-male`, `energetic-male`, `storyteller-male`. Advanced:
+      a raw 32-character Fish `reference_id` is also accepted. For `drama` / `avatar`
+      this sets the primary / narrator timbre; distinct characters may still get their
+      own.'
+    zh_Hans: 'Optional narration voice — the **timbre** of the voiceover, independent
+      of language. `auto` (default) lets the director pick a fitting voice. Every
+      preset can speak the language selected in `langs`, so choose purely by character
+      — `warm-female`, `bright-female`, `anchor-female`, `clean-female`, `calm-male`,
+      `deep-male`, `documentary-male`, `energetic-male`, `storyteller-male`. Advanced:
+      a raw 32-character Fish `reference_id` is also accepted. For `drama` / `avatar`
+      this sets the primary / narrator timbre; distinct characters may still get their
+      own.'
+  llm_description: 'Optional narration voice — the **timbre** of the voiceover, independent
+    of language. `auto` (default) lets the director pick a fitting voice. Every preset
+    can speak the language selected in `langs`, so choose purely by character — `warm-female`,
+    `bright-female`, `anchor-female`, `clean-female`, `calm-male`, `deep-male`, `documentary-male`,
+    `energetic-male`, `storyteller-male`. Advanced: a raw 32-character Fish `reference_id`
+    is also accepted. For `drama` / `avatar` this sets the primary / narrator timbre;
+    distinct characters may still get their own.'
+  default: auto
+- name: action
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Action
+    zh_Hans: 操作
+  human_description:
+    en_US: Production action. generate creates a new video; remix/edit/extend require
+      ref_task_id.
+    zh_Hans: Production action. generate creates a new video; remix/edit/extend require
+      ref_task_id.
+  llm_description: Production action. generate creates a new video; remix/edit/extend
+    require ref_task_id.
+  options:
+  - value: generate
+    label:
+      en_US: generate
+      zh_Hans: generate
+  - value: remix
+    label:
+      en_US: remix
+      zh_Hans: remix
+  - value: edit
+    label:
+      en_US: edit
+      zh_Hans: edit
+  - value: extend
+    label:
+      en_US: extend
+      zh_Hans: extend
+  default: generate
+- name: aspect
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Aspect
+    zh_Hans: 画面比例
+  human_description:
+    en_US: Required output aspect ratio. All videos render at 1080p/30fps.
+    zh_Hans: Required output aspect ratio. All videos render at 1080p/30fps.
+  llm_description: Required output aspect ratio. All videos render at 1080p/30fps.
+  options:
+  - value: '9:16'
+    label:
+      en_US: '9:16'
+      zh_Hans: '9:16'
+  - value: '16:9'
+    label:
+      en_US: '16:9'
+      zh_Hans: '16:9'
+  - value: '1:1'
+    label:
+      en_US: '1:1'
+      zh_Hans: '1:1'
+  default: '9:16'
+- name: prompt
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Natural-language brief describing the video to produce (the topic, what
+      to show, tone, audience). The agent decides the script, visuals, voiceover and
+      edit.
+    zh_Hans: Natural-language brief describing the video to produce (the topic, what
+      to show, tone, audience). The agent decides the script, visuals, voiceover and
+      edit.
+  llm_description: Natural-language brief describing the video to produce (the topic,
+    what to show, tone, audience). The agent decides the script, visuals, voiceover
+    and edit.
+- name: duration
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Duration
+    zh_Hans: 时长（秒）
+  human_description:
+    en_US: Target video length in seconds, from 5 to 300. Successful jobs are billed
+      by actual delivered duration, never above the requested duration.
+    zh_Hans: Target video length in seconds, from 5 to 300. Successful jobs are billed
+      by actual delivered duration, never above the requested duration.
+  llm_description: Target video length in seconds, from 5 to 300. Successful jobs
+    are billed by actual delivered duration, never above the requested duration.
+  default: 30
+- name: scenario
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Scenario
+    zh_Hans: 视频场景
+  human_description:
+    en_US: 'Production route: auto, narrated, captions, avatar, or drama. captions
+      requires source video in file_urls; avatar requires a portrait. All routes use
+      the same per-second rate.'
+    zh_Hans: 'Production route: auto, narrated, captions, avatar, or drama. captions
+      requires source video in file_urls; avatar requires a portrait. All routes use
+      the same per-second rate.'
+  llm_description: 'Production route: auto, narrated, captions, avatar, or drama.
+    captions requires source video in file_urls; avatar requires a portrait. All routes
+    use the same per-second rate.'
+  options:
+  - value: auto
+    label:
+      en_US: auto
+      zh_Hans: auto
+  - value: narrated
+    label:
+      en_US: narrated
+      zh_Hans: narrated
+  - value: captions
+    label:
+      en_US: captions
+      zh_Hans: captions
+  - value: avatar
+    label:
+      en_US: avatar
+      zh_Hans: avatar
+  - value: drama
+    label:
+      en_US: drama
+      zh_Hans: drama
+  default: auto
+- name: file_urls
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: File urls
+    zh_Hans: 参考素材 URL 数组
+  human_description:
+    en_US: Optional reference media (image / video / audio URLs) the agent can use
+      — e.g. a product shot or logo to feature, footage to caption. Enter valid JSON.
+    zh_Hans: Optional reference media (image / video / audio URLs) the agent can use
+      — e.g. a product shot or logo to feature, footage to caption.
+  llm_description: Optional reference media (image / video / audio URLs) the agent
+    can use — e.g. a product shot or logo to feature, footage to caption. Enter valid
+    JSON.
+- name: ref_task_id
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Ref task id
+    zh_Hans: 参考任务 ID
+  human_description:
+    en_US: 'Required when `action` is remix / edit / extend: the task_id of the previous
+      video to start from.'
+    zh_Hans: 'Required when `action` is remix / edit / extend: the task_id of the
+      previous video to start from.'
+  llm_description: 'Required when `action` is remix / edit / extend: the task_id of
+    the previous video to start from.'
+- name: callback_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Callback url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Optional. Fired with the result when the task reaches a terminal state
+      (succeeded / failed).
+    zh_Hans: Optional. Fired with the result when the task reaches a terminal state
+      (succeeded / failed).
+  llm_description: Optional. Fired with the result when the task reaches a terminal
+    state (succeeded / failed).
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/maestro_generate_video.py

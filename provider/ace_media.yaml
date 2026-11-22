@@ -139,6 +139,20 @@ tools:
 - tools/acemusic_retrieve.yaml
 - tools/acemusic_batch.yaml
 - tools/acemusic_history.yaml
+- tools/digitalhuman_generate_video.yaml
+- tools/digitalhuman_get_task.yaml
+- tools/digitalhuman_list_tasks.yaml
+- tools/dreamina_generate_video.yaml
+- tools/dreamina_get_task.yaml
+- tools/dreamina_get_tasks.yaml
+- tools/gemini_generate_video.yaml
+- tools/gemini_get_task.yaml
+- tools/gemini_get_tasks.yaml
+- tools/maestro_generate_video.yaml
+- tools/maestro_get_task.yaml
+- tools/maestro_list_tasks.yaml
+- tools/digitalhuman_clone_voice.yaml
+- tools/digitalhuman_delete_task.yaml
 extra:
   python:
     source: provider/ace_media.py

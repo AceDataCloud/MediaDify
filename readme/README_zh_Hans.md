@@ -1,6 +1,6 @@
 # Dify Ace 媒体与工具
 
-一个 **Ace Data Cloud** 供应商整合 **21 个服务系列的 110 个当前原生工具**，覆盖图片、视频、音乐、语音、面部处理与搜索。每个服务保留独立工具名和参数，只需在供应商中配置一个通用应用 API Key。
+一个 **Ace Data Cloud** 供应商整合 **25 个服务系列的 124 个当前原生工具**，覆盖图片、视频、音乐、语音、面部处理与搜索。每个服务保留独立工具名和参数，只需在供应商中配置一个通用应用 API Key。
 
 **分发说明：**源码或 Release 包本身不代表已上架或获得 Marketplace Verified。请以[官方市场页面](https://marketplace.dify.ai/plugin/acedatacloud/ace_media)的当前状态为准；正式获准前，只能使用工作区允许的本地插件安装流程。整合和迁移时间由官方审核确定。本仓库不会自动卸载已有插件，也不会改写已有工作流。
 
@@ -16,7 +16,7 @@
 
 任务或人设删除工具要求显式确认标志和目标资源 ID，请只允许工作流需要的操作。
 
-使用具有所选服务权限的**通用应用 Key**。启用 Allowed APIs 时，允许工作流涉及的生成/操作接口、同服务任务查询接口，以及只读模型目录。单服务专用 Key 无法覆盖全部 21 个系列。插件免费，API 调用按账号当前价格计费；生成、声音操作、上传和搜索可能分别计费。
+使用具有所选服务权限的**通用应用 Key**。启用 Allowed APIs 时，允许工作流涉及的生成/操作接口、同服务任务查询接口，以及只读模型目录。单服务专用 Key 无法覆盖全部 25 个系列。插件免费，API 调用按账号当前价格计费；生成、声音操作、上传和搜索可能分别计费。
 
 ## 选择服务工具
 
@@ -45,8 +45,20 @@
 | Veo | 3 | [Source adapter](https://github.com/AceDataCloud/VeoDify) |
 | Wan | 4 | [Source adapter](https://github.com/AceDataCloud/WanDify) |
 | ACE Music | 9 | [Source adapter](https://github.com/AceDataCloud/ACEMusicDify) |
+| Digital Human | 5 | [Public video API](https://platform.acedata.cloud/api/v1/apis/5ced04db-8d92-4a6b-b988-91423dcc1f02/) |
+| Dreamina OmniHuman 1.5 | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/b3880780-678f-4495-bda7-3a1ecf42781c/) |
+| Gemini Omni Flash Video | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/d9d2fd18-5b1e-4218-b572-a75cf46f5451/) |
+| Maestro | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/ab512c42-324c-42e6-8d79-49a5042f3548/) |
 
 模型下拉框和运行时校验按具体操作的公开 API 定义同步，不只列热门型号。图片、视频继续使用相应原生工具，模型价格和能力不会根据名称猜测。
+
+## 补充视频操作
+
+Digital Human 和 Maestro 是固定服务操作，不会伪造为模型 ID。Digital Human 使用源图片/视频及驱动音频，或文本加自有声音 ID；声音克隆工具只用于获授权样本。已弃用且不影响输出的引擎/分辨率选项不会伪装成有效选择。Dreamina 按公开合同向 `/dreamina/videos` 发送 `omnihuman-1.5`；Gemini 向 `/gemini/videos` 发送 `omni-flash`，引用视频编辑时必须同时提供图片。
+
+Maestro 支持生成、改编、编辑和延长；修改已有作品需要原 `ref_task_id`，每个任务只指定一个输出语言。Digital Human/Maestro 的历史工具查询当前账号的最近任务，不冒充按 ID 数组批量查找；Dreamina/Gemini 的批量工具则明确接收 ID。输入图片/音频回显不算新生成视频；已处理 Dreamina 的 `done` 完成态及 Maestro 的 `output_url` 成片字段。
+
+同步还会按 API 操作核对完整公开媒体目录；出现没有适配器的新操作时会失败并要求审核。标准 OpenAI 语音合成、转写和 Embedding 由配套模型供应商源码承载；源码覆盖不代表它已在市场发布。
 
 ## 异步工作流
 
@@ -103,7 +115,8 @@ ruff check .
 ruff format --check .
 python scripts/sync_models.py --refresh
 python scripts/sync_models.py --check
-dify plugin package . -o ../ace_media-0.1.2.difypkg
+python scripts/check_media_coverage.py --refresh
+dify plugin package . -o ../ace_media-0.1.3.difypkg
 ```
 
 正常测试会通过真实 Dify SDK 加载全部工具，重放源请求契约并检查任务状态及模型控件一致性。测试使用离线响应，不调用付费服务。没有把新整合包声称为已完成 Dify Cloud 或新付费生成验收。源码/打包验证与官方上架是不同阶段。

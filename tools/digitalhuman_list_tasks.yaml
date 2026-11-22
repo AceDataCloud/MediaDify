@@ -1,0 +1,96 @@
+identity:
+  name: digitalhuman_list_tasks
+  author: acedatacloud
+  label:
+    en_US: Digital Human List Recent Tasks
+    zh_Hans: Digital Human List Recent Tasks
+description:
+  human:
+    en_US: Digital Human List Recent Tasks through the published Ace Data Cloud API.
+      Preserve the returned task ID and query the same service until completion.
+    zh_Hans: Digital Human List Recent Tasks through the published Ace Data Cloud
+      API. Preserve the returned task ID and query the same service until completion.
+  llm: Digital Human List Recent Tasks through the published Ace Data Cloud API. Preserve
+    the returned task ID and query the same service until completion.
+parameters:
+- name: type
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Type
+    zh_Hans: 任务类型
+  human_description:
+    en_US: Optional retrieve_batch history kind filter.
+    zh_Hans: Optional retrieve_batch history kind filter.
+  llm_description: Optional retrieve_batch history kind filter.
+  options:
+  - value: videos
+    label:
+      en_US: videos
+      zh_Hans: videos
+  - value: voices
+    label:
+      en_US: voices
+      zh_Hans: voices
+- name: limit
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Limit
+    zh_Hans: 条数
+  human_description:
+    en_US: Maximum number of recent tasks for retrieve_batch.
+    zh_Hans: Maximum number of recent tasks for retrieve_batch.
+  llm_description: Maximum number of recent tasks for retrieve_batch.
+  default: 20
+- name: created_at_max
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Created at max
+    zh_Hans: 截止时间戳
+  human_description:
+    en_US: 'For retrieve_batch: only tasks created strictly before this Unix timestamp
+      in seconds.'
+    zh_Hans: 'For retrieve_batch: only tasks created strictly before this Unix timestamp
+      in seconds.'
+  llm_description: 'For retrieve_batch: only tasks created strictly before this Unix
+    timestamp in seconds.'
+- name: created_at_min
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Created at min
+    zh_Hans: 起始时间戳
+  human_description:
+    en_US: 'For retrieve_batch: only tasks created strictly after this Unix timestamp
+      in seconds.'
+    zh_Hans: 'For retrieve_batch: only tasks created strictly after this Unix timestamp
+      in seconds.'
+  llm_description: 'For retrieve_batch: only tasks created strictly after this Unix
+    timestamp in seconds.'
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/digitalhuman_list_tasks.py

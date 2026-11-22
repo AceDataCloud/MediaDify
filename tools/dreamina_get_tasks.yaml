@@ -1,0 +1,49 @@
+identity:
+  name: dreamina_get_tasks
+  author: acedatacloud
+  label:
+    en_US: Dreamina OmniHuman 1.5 Get Tasks by ID
+    zh_Hans: Dreamina OmniHuman 1.5 Get Tasks by ID
+description:
+  human:
+    en_US: Dreamina OmniHuman 1.5 Get Tasks by ID through the published Ace Data Cloud
+      API. Preserve the returned task ID and query the same service until completion.
+    zh_Hans: Dreamina OmniHuman 1.5 Get Tasks by ID through the published Ace Data
+      Cloud API. Preserve the returned task ID and query the same service until completion.
+  llm: Dreamina OmniHuman 1.5 Get Tasks by ID through the published Ace Data Cloud
+    API. Preserve the returned task ID and query the same service until completion.
+parameters:
+- name: ids
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Ids
+    zh_Hans: 任务 ID 数组
+  human_description:
+    en_US: A list of task IDs for batch querying, to be used with `retrieve_batch`.
+      Enter valid JSON.
+    zh_Hans: A list of task IDs for batch querying, to be used with `retrieve_batch`.
+  llm_description: A list of task IDs for batch querying, to be used with `retrieve_batch`.
+    Enter valid JSON.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/dreamina_get_tasks.py

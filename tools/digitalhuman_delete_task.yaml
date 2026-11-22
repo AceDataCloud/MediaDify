@@ -1,0 +1,59 @@
+identity:
+  name: digitalhuman_delete_task
+  author: acedatacloud
+  label:
+    en_US: Digital Human Delete Task
+    zh_Hans: Digital Human Delete Task
+description:
+  human:
+    en_US: Digital Human Delete Task through the published Ace Data Cloud API. Preserve
+      the returned task ID and query the same service until completion.
+    zh_Hans: Digital Human Delete Task through the published Ace Data Cloud API. Preserve
+      the returned task ID and query the same service until completion.
+  llm: Digital Human Delete Task through the published Ace Data Cloud API. Preserve
+    the returned task ID and query the same service until completion.
+parameters:
+- name: id
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Id
+    zh_Hans: id
+  human_description:
+    en_US: The task ID to delete.
+    zh_Hans: The task ID to delete.
+  llm_description: The task ID to delete.
+- name: confirm
+  type: boolean
+  required: true
+  form: llm
+  label:
+    en_US: Confirm
+    zh_Hans: 确认删除
+  human_description:
+    en_US: Explicitly confirm deletion of the selected task.
+    zh_Hans: Explicitly confirm deletion of the selected task.
+  llm_description: Explicitly confirm deletion of the selected task.
+  default: false
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/digitalhuman_delete_task.py

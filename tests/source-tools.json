@@ -285,5 +285,59 @@
     ],
     "old_plugin_id": "acedatacloud/acemusic",
     "task_path": "/acemusic/tasks"
+  },
+  {
+    "service": "digitalhuman",
+    "repository": "https://github.com/AceDataCloud/MediaDify",
+    "tool_names": [
+      "digitalhuman_generate_video",
+      "digitalhuman_get_task",
+      "digitalhuman_list_tasks",
+      "digitalhuman_clone_voice",
+      "digitalhuman_delete_task"
+    ],
+    "old_plugin_id": null,
+    "task_path": "/digital-human/tasks",
+    "origin": "current_public_api_contract",
+    "catalog_kind": "service"
+  },
+  {
+    "service": "dreamina",
+    "repository": "https://github.com/AceDataCloud/MediaDify",
+    "tool_names": [
+      "dreamina_generate_video",
+      "dreamina_get_task",
+      "dreamina_get_tasks"
+    ],
+    "old_plugin_id": null,
+    "task_path": "/dreamina/tasks",
+    "origin": "current_public_api_contract",
+    "catalog_kind": "model"
+  },
+  {
+    "service": "gemini",
+    "repository": "https://github.com/AceDataCloud/MediaDify",
+    "tool_names": [
+      "gemini_generate_video",
+      "gemini_get_task",
+      "gemini_get_tasks"
+    ],
+    "old_plugin_id": null,
+    "task_path": "/gemini/tasks",
+    "origin": "current_public_api_contract",
+    "catalog_kind": "model"
+  },
+  {
+    "service": "maestro",
+    "repository": "https://github.com/AceDataCloud/MediaDify",
+    "tool_names": [
+      "maestro_generate_video",
+      "maestro_get_task",
+      "maestro_list_tasks"
+    ],
+    "old_plugin_id": null,
+    "task_path": "/maestro/tasks",
+    "origin": "current_public_api_contract",
+    "catalog_kind": "service"
   }
 ]

@@ -1,0 +1,120 @@
+identity:
+  name: dreamina_generate_video
+  author: acedatacloud
+  label:
+    en_US: Dreamina OmniHuman 1.5 Generate Video
+    zh_Hans: Dreamina OmniHuman 1.5 Generate Video
+description:
+  human:
+    en_US: Dreamina OmniHuman 1.5 Generate Video through the published Ace Data Cloud
+      API. Preserve the returned task ID and query the same service until completion.
+    zh_Hans: Dreamina OmniHuman 1.5 Generate Video through the published Ace Data
+      Cloud API. Preserve the returned task ID and query the same service until completion.
+  llm: Dreamina OmniHuman 1.5 Generate Video through the published Ace Data Cloud
+    API. Preserve the returned task ID and query the same service until completion.
+parameters:
+- name: model
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Model
+    zh_Hans: 模型
+  human_description:
+    en_US: The model being used is OmniHuman 1.5.
+    zh_Hans: The model being used is OmniHuman 1.5.
+  llm_description: The model being used is OmniHuman 1.5.
+  options:
+  - value: omnihuman-1.5
+    label:
+      en_US: omnihuman-1.5
+      zh_Hans: omnihuman-1.5
+  default: omnihuman-1.5
+- name: prompt
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Optional text prompts for guiding expressions, emotions, stability, and
+      style.
+    zh_Hans: Optional text prompts for guiding expressions, emotions, stability, and
+      style.
+  llm_description: Optional text prompts for guiding expressions, emotions, stability,
+    and style.
+- name: mask_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Mask url
+    zh_Hans: 人物遮罩 URL 数组
+  human_description:
+    en_US: Optional subject mask URL (from object detection) to specify and drive
+      a particular person in a multi-person image. Enter valid JSON.
+    zh_Hans: Optional subject mask URL (from object detection) to specify and drive
+      a particular person in a multi-person image.
+  llm_description: Optional subject mask URL (from object detection) to specify and
+    drive a particular person in a multi-person image. Enter valid JSON.
+- name: audio_url
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Audio url
+    zh_Hans: 音频 URL
+  human_description:
+    en_US: Public URL for audio (mp3/wav). The character will lip-sync to it, and
+      it is recommended that the duration be controlled within 60 seconds.
+    zh_Hans: Public URL for audio (mp3/wav). The character will lip-sync to it, and
+      it is recommended that the duration be controlled within 60 seconds.
+  llm_description: Public URL for audio (mp3/wav). The character will lip-sync to
+    it, and it is recommended that the duration be controlled within 60 seconds.
+- name: image_url
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Image url
+    zh_Hans: 图片 URL
+  human_description:
+    en_US: Public URL of portrait images. Clear frontal face effects are best.
+    zh_Hans: Public URL of portrait images. Clear frontal face effects are best.
+  llm_description: Public URL of portrait images. Clear frontal face effects are best.
+- name: callback_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Callback url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: If provided, the request will immediately return task_id, and the result
+      will be pushed to that URL once ready.
+    zh_Hans: If provided, the request will immediately return task_id, and the result
+      will be pushed to that URL once ready.
+  llm_description: If provided, the request will immediately return task_id, and the
+    result will be pushed to that URL once ready.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/dreamina_generate_video.py

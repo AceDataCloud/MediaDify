@@ -25,7 +25,7 @@ consent for the material they provide; do not use these tools to impersonate
 people or process material without authorization. These capabilities are
 disclosed for the Marketplace's higher-risk review.
 
-Selected tools can create or delete tasks/personas within the configured key's service permissions. Destructive operations require their explicit confirmation control; the plugin does not delete unrelated resources as part of installation or migration.
+Selected tools can create or delete tasks/voices/personas within the configured key's service permissions. Destructive operations require their explicit confirmation control; the plugin does not delete unrelated resources as part of installation or migration.
 
 The API also receives ordinary connection metadata, such as the Dify server's IP
 address and API usage needed to operate and bill the selected service.
