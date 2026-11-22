@@ -1,0 +1,31 @@
+identity:
+  name: acemusic_batch
+  author: acedatacloud
+  label:
+    en_US: Retrieve multiple tasks
+    zh_Hans: 批量查询任务
+description:
+  human:
+    en_US: Read 1 to 100 existing task IDs, one per line.
+    zh_Hans: 批量查询任务
+  llm: Read 1 to 100 existing task IDs, one per line.
+parameters:
+- name: task_ids
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Task IDs (one per line)
+  human_description:
+    en_US: Task IDs (one per line)
+  llm_description: Task IDs (one per line)
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_batch.py

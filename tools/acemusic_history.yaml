@@ -1,0 +1,40 @@
+identity:
+  name: acemusic_history
+  author: acedatacloud
+  label:
+    en_US: List task history
+    zh_Hans: 查询任务历史
+description:
+  human:
+    en_US: Read one page of the authenticated application’s task history.
+    zh_Hans: 查询任务历史
+  llm: Read one page of the authenticated application’s task history.
+parameters:
+- name: page
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Page (1–10001)
+  human_description:
+    en_US: Page (1–10001)
+  llm_description: Page (1–10001)
+- name: page_size
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Items per page (1–100)
+  human_description:
+    en_US: Items per page (1–100)
+  llm_description: Items per page (1–100)
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_history.py

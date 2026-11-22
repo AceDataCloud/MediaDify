@@ -1,0 +1,31 @@
+identity:
+  name: acemusic_retrieve
+  author: acedatacloud
+  label:
+    en_US: Retrieve task
+    zh_Hans: 查询任务
+description:
+  human:
+    en_US: Read the same task ID. Inspect its state and response for tracks or lyrics.
+    zh_Hans: 查询任务
+  llm: Read the same task ID. Inspect its state and response for tracks or lyrics.
+parameters:
+- name: task_id
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Task ID
+  human_description:
+    en_US: Task ID
+  llm_description: Task ID
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_retrieve.py

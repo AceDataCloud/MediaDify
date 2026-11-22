@@ -1,0 +1,42 @@
+identity:
+  name: acemusic_lyrics
+  author: acedatacloud
+  label:
+    en_US: Generate lyrics
+    zh_Hans: 生成歌词
+description:
+  human:
+    en_US: Request paid lyrics independently. The reply may contain lyrics or a pending
+      task ID.
+    zh_Hans: 生成歌词
+  llm: Request paid lyrics independently. The reply may contain lyrics or a pending
+    task ID.
+parameters:
+- name: prompt
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Music or lyrics idea
+  human_description:
+    en_US: Music or lyrics idea
+  llm_description: Music or lyrics idea
+- name: style
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Musical style
+  human_description:
+    en_US: Musical style
+  llm_description: Musical style
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_lyrics.py

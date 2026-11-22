@@ -1,0 +1,49 @@
+identity:
+  name: acemusic_generate
+  author: acedatacloud
+  label:
+    en_US: Create song from idea
+    zh_Hans: 按描述生成歌曲
+description:
+  human:
+    en_US: Submit one paid song generation. Save its task ID.
+    zh_Hans: 按描述生成歌曲
+  llm: Submit one paid song generation. Save its task ID.
+parameters:
+- name: prompt
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Music or lyrics idea
+  human_description:
+    en_US: Music or lyrics idea
+  llm_description: Music or lyrics idea
+- name: model
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Model
+  human_description:
+    en_US: Model
+  llm_description: Model
+  options:
+  - value: acemusic-v1.1
+    label:
+      en_US: acemusic-v1.1
+      zh_Hans: acemusic-v1.1
+  - value: acemusic-v1
+    label:
+      en_US: acemusic-v1
+      zh_Hans: acemusic-v1
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_generate.py

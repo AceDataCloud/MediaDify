@@ -1,0 +1,30 @@
+name: Test consolidated provider
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - run: python -m pip install -r requirements.txt pytest ruff
+      - run: python -m pytest
+        env:
+          PYTEST_DISABLE_PLUGIN_AUTOLOAD: '1'
+      - run: ruff check . && ruff format --check .
+      - name: Package and inspect the real plugin
+        run: |
+          curl --fail --silent --show-error --location https://github.com/langgenius/dify-plugin-daemon/releases/download/0.6.15/dify-plugin-linux-amd64 --output "$RUNNER_TEMP/dify"
+          echo "d0a1e3b25bd6c5f6cd749cad2cf04817ea808344e6cc07a2c49bb0108019ab93  $RUNNER_TEMP/dify" | sha256sum --check
+          chmod +x "$RUNNER_TEMP/dify"
+          "$RUNNER_TEMP/dify" plugin package . -o "$RUNNER_TEMP/ace_media.difypkg"
+          python scripts/check_package.py "$RUNNER_TEMP/ace_media.difypkg"

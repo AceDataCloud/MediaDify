@@ -1,0 +1,49 @@
+identity:
+  name: acemusic_upload
+  author: acedatacloud
+  label:
+    en_US: Import reference MP3
+    zh_Hans: 导入参考 MP3
+description:
+  human:
+    en_US: Import one publicly accessible HTTPS MP3 as a separately priced reference.
+    zh_Hans: 导入参考 MP3
+  llm: Import one publicly accessible HTTPS MP3 as a separately priced reference.
+parameters:
+- name: audio_url
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Public HTTPS MP3 URL
+  human_description:
+    en_US: Public HTTPS MP3 URL
+  llm_description: Public HTTPS MP3 URL
+- name: name
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Display name
+  human_description:
+    en_US: Display name
+  llm_description: Display name
+- name: audio_id
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Owned track ID
+  human_description:
+    en_US: Owned track ID
+  llm_description: Owned track ID
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_upload.py
