@@ -2,7 +2,7 @@
 
 一个 **Ace Data Cloud** 供应商整合 **21 个服务系列的 110 个当前原生工具**，覆盖图片、视频、音乐、语音、面部处理与搜索。每个服务保留独立工具名和参数，只需在供应商中配置一个通用应用 API Key。
 
-**发布状态：**当前是整合源码与安装包候选，尚未上架或获得 Dify Marketplace Verified。官方需要审核整合范围与迁移安排。本仓库不会自动卸载已有插件，也不会改写已有工作流。
+**分发说明：**源码或 Release 包本身不代表已上架或获得 Marketplace Verified。请以[官方市场页面](https://marketplace.dify.ai/plugin/acedatacloud/ace_media)的当前状态为准；正式获准前，只能使用工作区允许的本地插件安装流程。整合和迁移时间由官方审核确定。本仓库不会自动卸载已有插件，也不会改写已有工作流。
 
 [源码](https://github.com/AceDataCloud/MediaDify) · [反馈](https://github.com/AceDataCloud/MediaDify/issues) · [English](../README.md) · dev@acedata.cloud
 
@@ -103,7 +103,7 @@ ruff check .
 ruff format --check .
 python scripts/sync_models.py --refresh
 python scripts/sync_models.py --check
-dify plugin package . -o ../ace_media-0.1.0.difypkg
+dify plugin package . -o ../ace_media-0.1.1.difypkg
 ```
 
 正常测试会通过真实 Dify SDK 加载全部工具，重放源请求契约并检查任务状态及模型控件一致性。测试使用离线响应，不调用付费服务。没有把新整合包声称为已完成 Dify Cloud 或新付费生成验收。源码/打包验证与官方上架是不同阶段。

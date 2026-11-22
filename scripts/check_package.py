@@ -2,6 +2,7 @@
 
 import hashlib
 import json
+import re
 import sys
 import zipfile
 from pathlib import Path
@@ -35,6 +36,10 @@ def check(path):
     ]
     if bad:
         raise ValueError("Development/private files in package: " + ", ".join(bad))
+    if re.search(r"[\u3400-\u9fff]", archive.read("README.md").decode()):
+        raise ValueError(
+            "Primary README must be English; keep localized text in its separate guide"
+        )
     manifest = yaml.safe_load(archive.read("manifest.yaml"))
     provider = yaml.safe_load(archive.read("provider/ace_media.yaml"))
     assert manifest["author"] == "acedatacloud" and manifest["name"] == "ace_media"
