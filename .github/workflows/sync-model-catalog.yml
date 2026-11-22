@@ -27,7 +27,8 @@ jobs:
         id: catalog
         run: |
           python scripts/sync_models.py --refresh
-          if git diff --quiet -- tools tests/published-model-options.json; then
+          python scripts/check_media_coverage.py --refresh
+          if git diff --quiet -- tools tests/published-model-options.json tests/public-media-catalog.json; then
             echo 'changed=false' >> "$GITHUB_OUTPUT"
           else
             echo 'changed=true' >> "$GITHUB_OUTPUT"
@@ -69,7 +70,7 @@ jobs:
           git switch -c "$CATALOG_BRANCH"
           git config user.name 'Ace Data Cloud Dev'
           git config user.email 'dev@acedata.cloud'
-          git add tools tests/published-model-options.json manifest.yaml
+          git add tools tests/published-model-options.json tests/public-media-catalog.json manifest.yaml
           git commit -m 'Update the published media model options'
           gh auth setup-git
           git push origin "HEAD:refs/heads/$CATALOG_BRANCH"

@@ -1,6 +1,6 @@
 # Ace Media and Tools for Dify
 
-One **Ace Data Cloud** provider brings **110 active native tools across 21 service families** into Dify. It consolidates the existing image, video, music, speech, face and search integrations. Each service keeps its own tool names and controls; one General application API key is configured on the provider.
+One **Ace Data Cloud** provider brings **124 native tools across 25 service families** into Dify. It consolidates the existing image, video, music, speech, face and search integrations. Each service keeps its own tool names and controls; one General application API key is configured on the provider.
 
 **Distribution:** source/release packages alone do not establish a Marketplace listing or Verified status. Check the [official Marketplace page](https://marketplace.dify.ai/plugin/acedatacloud/ace_media) for current availability; until accepted, use only your workspace's permitted local-package flow. The official consolidation review determines the transition schedule. No existing plugin is uninstalled, and no existing workflow is changed automatically.
 
@@ -16,7 +16,7 @@ One **Ace Data Cloud** provider brings **110 active native tools across 21 servi
 
 Task/persona deletion tools require an explicit confirmation flag and the selected resource ID. Enable only the operations your workflow needs.
 
-Use a **General application** key with access to the services you select. If Allowed APIs are restricted, permit the actual generation/operation endpoints and task-query endpoints used by your workflow, as well as the read-only model catalog. A service-specific key cannot cover all 21 families. API calls use current account pricing; a free plugin does not make generation, voice operations, uploads or search free.
+Use a **General application** key with access to the services you select. If Allowed APIs are restricted, permit the actual generation/operation endpoints and task-query endpoints used by your workflow, as well as the read-only model catalog. A service-specific key cannot cover all 25 families. API calls use current account pricing; a free plugin does not make generation, voice operations, uploads or search free.
 
 ## Select the service tool
 
@@ -45,8 +45,20 @@ Search by the service name in the Dify tool picker. Existing tool IDs and reques
 | Veo | 3 | [Source adapter](https://github.com/AceDataCloud/VeoDify) |
 | Wan | 4 | [Source adapter](https://github.com/AceDataCloud/WanDify) |
 | ACE Music | 9 | [Source adapter](https://github.com/AceDataCloud/ACEMusicDify) |
+| Digital Human | 5 | [Public video API](https://platform.acedata.cloud/api/v1/apis/5ced04db-8d92-4a6b-b988-91423dcc1f02/) |
+| Dreamina OmniHuman 1.5 | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/b3880780-678f-4495-bda7-3a1ecf42781c/) |
+| Gemini Omni Flash Video | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/d9d2fd18-5b1e-4218-b572-a75cf46f5451/) |
+| Maestro | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/ab512c42-324c-42e6-8d79-49a5042f3548/) |
 
 Model dropdowns and runtime validation are synchronized from each operation's actual public API definition, not a short popular-model list. Image and video models stay in their native tool interfaces. The source synchronization never guesses a model's price or capabilities from its name.
+
+## Additional video operations
+
+Digital Human and Maestro are fixed service operations, not invented model IDs. Digital Human accepts a source image/video and driving audio, or text with an owned voice ID; its clone-voice tool accepts an authorized voice sample. Deprecated engine/resolution selectors are not exposed as meaningful choices. Dreamina uses the documented `omnihuman-1.5` model at `/dreamina/videos`; Gemini uses `omni-flash` at `/gemini/videos`, with an image required when editing a reference video.
+
+Maestro supports generate/remix/edit/extend, with the original `ref_task_id` required for revisions and exactly one output language. Digital Human and Maestro history tools list the caller's recent tasks; they do not pretend to retrieve a selected ID array. Dreamina/Gemini batch tools explicitly take IDs. Returned reference images/audio are not advertised as newly generated video; Dreamina's documented `done` state and Maestro's delivered `output_url` variants are handled.
+
+The full public media catalog is checked by API operation in addition to existing model lists. New uncovered operations fail the source synchronization for adapter review. Standard OpenAI speech/transcription/embedding interfaces belong to the companion model-provider source; that source-level coverage is not a claim about its current Marketplace release.
 
 ## A first asynchronous workflow
 
@@ -108,7 +120,8 @@ ruff check .
 ruff format --check .
 python scripts/sync_models.py --refresh
 python scripts/sync_models.py --check
-dify plugin package . -o ../ace_media-0.1.2.difypkg
+python scripts/check_media_coverage.py --refresh
+dify plugin package . -o ../ace_media-0.1.3.difypkg
 ```
 
 The normal test suite loads every tool through the real Dify SDK, replays source request-contract examples, checks original-task and batch behavior, and verifies model/picker/runtime parity. Tests use offline responses; they do not make paid calls. The new consolidated package has not been represented as a fresh Dify Cloud or live paid-generation acceptance. Source/CLI validation and official Marketplace publication are separate steps.

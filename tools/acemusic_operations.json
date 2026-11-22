@@ -17,7 +17,8 @@
         "kind": "model",
         "required": false
       }
-    }
+    },
+    "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f"
   },
   "custom": {
     "endpoint": "audios",
@@ -47,7 +48,8 @@
         "kind": "model",
         "required": false
       }
-    }
+    },
+    "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f"
   },
   "upload": {
     "endpoint": "audios",
@@ -71,7 +73,8 @@
         "kind": "text",
         "required": false
       }
-    }
+    },
+    "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f"
   },
   "cover": {
     "endpoint": "audios",
@@ -106,7 +109,8 @@
         "kind": "strength",
         "required": false
       }
-    }
+    },
+    "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f"
   },
   "mashup": {
     "endpoint": "audios",
@@ -146,7 +150,8 @@
         "kind": "strength",
         "required": false
       }
-    }
+    },
+    "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f"
   },
   "lyrics": {
     "endpoint": "lyrics",
@@ -162,7 +167,8 @@
         "kind": "text",
         "required": false
       }
-    }
+    },
+    "api_id": "b3637223-92ae-5e2f-8536-6df3ef16c509"
   },
   "retrieve": {
     "endpoint": "tasks",
@@ -175,7 +181,8 @@
         "kind": "text",
         "required": true
       }
-    }
+    },
+    "api_id": "cd422d13-3e61-5d2e-88fc-7281ff471565"
   },
   "batch": {
     "endpoint": "tasks",
@@ -188,7 +195,8 @@
         "kind": "ids",
         "required": true
       }
-    }
+    },
+    "api_id": "cd422d13-3e61-5d2e-88fc-7281ff471565"
   },
   "history": {
     "endpoint": "tasks",
@@ -206,6 +214,7 @@
         "kind": "size",
         "required": false
       }
-    }
+    },
+    "api_id": "cd422d13-3e61-5d2e-88fc-7281ff471565"
   }
 }

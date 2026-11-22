@@ -1,0 +1,60 @@
+identity:
+  name: maestro_get_task
+  author: acedatacloud
+  label:
+    en_US: Maestro Get Task
+    zh_Hans: Maestro Get Task
+description:
+  human:
+    en_US: Maestro Get Task through the published Ace Data Cloud API. Preserve the
+      returned task ID and query the same service until completion.
+    zh_Hans: Maestro Get Task through the published Ace Data Cloud API. Preserve the
+      returned task ID and query the same service until completion.
+  llm: Maestro Get Task through the published Ace Data Cloud API. Preserve the returned
+    task ID and query the same service until completion.
+parameters:
+- name: task_id
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Task id
+    zh_Hans: 任务 ID
+  human_description:
+    en_US: The original task ID from this service.
+    zh_Hans: The original task ID from this service.
+  llm_description: The original task ID from this service.
+- name: wait_seconds
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Wait seconds
+    zh_Hans: 最长等待秒数
+  human_description:
+    en_US: Optional bounded polling wait, 0 to 240 seconds. Does not resubmit creation.
+    zh_Hans: Optional bounded polling wait, 0 to 240 seconds. Does not resubmit creation.
+  llm_description: Optional bounded polling wait, 0 to 240 seconds. Does not resubmit
+    creation.
+  default: 0
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/maestro_get_task.py

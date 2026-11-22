@@ -1,0 +1,1264 @@
+{
+  "source": "https://platform.acedata.cloud/api/v1/models/catalog/",
+  "companion_provider": {
+    "plugin_id": "acedatacloud/acedatacloud",
+    "source_pr": "https://github.com/AceDataCloud/ModelProviderDify/pull/14",
+    "coverage_scope": "source contracts only; Marketplace status is tracked separately",
+    "apis": {
+      "078d0146-f820-4617-b98e-47ba15a93d60": "text-to-speech",
+      "60f037ff-7d2f-4ea4-ae42-feba542c8cb2": "speech-to-text",
+      "a0840c8a-2b9a-4407-8aaf-0057f0e1f65c": "text-embedding"
+    }
+  },
+  "items": [
+    {
+      "key": "audio:acemusic-v1",
+      "id": "acemusic-v1",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "acemusic",
+      "api_ids": [
+        "4c52eae4-e361-5ccb-9af4-1892e918649f"
+      ]
+    },
+    {
+      "key": "audio:acemusic-v1.1",
+      "id": "acemusic-v1.1",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "acemusic",
+      "api_ids": [
+        "4c52eae4-e361-5ccb-9af4-1892e918649f"
+      ]
+    },
+    {
+      "key": "video:digitalhuman",
+      "id": "digitalhuman",
+      "kind": "service",
+      "modality": "video",
+      "service_alias": "digitalhuman",
+      "api_ids": [
+        "5ced04db-8d92-4a6b-b988-91423dcc1f02"
+      ]
+    },
+    {
+      "key": "video:omnihuman-1.5",
+      "id": "omnihuman-1.5",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "dreamina",
+      "api_ids": [
+        "b3880780-678f-4495-bda7-3a1ecf42781c"
+      ]
+    },
+    {
+      "key": "audio:s1",
+      "id": "s1",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "fish",
+      "api_ids": [
+        "77adcb84-d59f-5ef9-b8a0-8b35eb42a71d"
+      ]
+    },
+    {
+      "key": "audio:s2-pro",
+      "id": "s2-pro",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "fish",
+      "api_ids": [
+        "77adcb84-d59f-5ef9-b8a0-8b35eb42a71d"
+      ]
+    },
+    {
+      "key": "audio:s2.1-pro",
+      "id": "s2.1-pro",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "fish",
+      "api_ids": [
+        "77adcb84-d59f-5ef9-b8a0-8b35eb42a71d"
+      ]
+    },
+    {
+      "key": "image:flux-2-flex",
+      "id": "flux-2-flex",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "image:flux-2-klein",
+      "id": "flux-2-klein",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "image:flux-2-max",
+      "id": "flux-2-max",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "image:flux-2-pro",
+      "id": "flux-2-pro",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "video:flux-3",
+      "id": "flux-3",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "flux",
+      "api_ids": [
+        "79bc5b19-5ae8-5931-8b9e-643165c02c64"
+      ]
+    },
+    {
+      "key": "image:flux-dev",
+      "id": "flux-dev",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "image:flux-kontext-max",
+      "id": "flux-kontext-max",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "image:flux-kontext-pro",
+      "id": "flux-kontext-pro",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "image:flux-pro",
+      "id": "flux-pro",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "flux",
+      "api_ids": [
+        "deefc5d7-7f22-43e9-929e-f2b6afee60b7"
+      ]
+    },
+    {
+      "key": "video:omni-flash",
+      "id": "omni-flash",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "gemini",
+      "api_ids": [
+        "d9d2fd18-5b1e-4218-b572-a75cf46f5451"
+      ]
+    },
+    {
+      "key": "video:grok-imagine-video",
+      "id": "grok-imagine-video",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "grok",
+      "api_ids": [
+        "c1c460c7-adc7-42c2-b7b0-d4bdfaa66222"
+      ]
+    },
+    {
+      "key": "video:grok-imagine-video-1.5-fast:reverse",
+      "id": "grok-imagine-video-1.5-fast:reverse",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "grok",
+      "api_ids": [
+        "c1c460c7-adc7-42c2-b7b0-d4bdfaa66222"
+      ]
+    },
+    {
+      "key": "video:grok-imagine-video-1.5:official",
+      "id": "grok-imagine-video-1.5:official",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "grok",
+      "api_ids": [
+        "c1c460c7-adc7-42c2-b7b0-d4bdfaa66222"
+      ]
+    },
+    {
+      "key": "video:grok-imagine-video:official",
+      "id": "grok-imagine-video:official",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "grok",
+      "api_ids": [
+        "c1c460c7-adc7-42c2-b7b0-d4bdfaa66222"
+      ]
+    },
+    {
+      "key": "video:grok-imagine-video:reverse",
+      "id": "grok-imagine-video:reverse",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "grok",
+      "api_ids": [
+        "c1c460c7-adc7-42c2-b7b0-d4bdfaa66222"
+      ]
+    },
+    {
+      "key": "video:minimax-i2v",
+      "id": "minimax-i2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "hailuo",
+      "api_ids": [
+        "d5af91f6-a7ec-4015-b0a5-d25051158470"
+      ]
+    },
+    {
+      "key": "video:minimax-i2v-director",
+      "id": "minimax-i2v-director",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "hailuo",
+      "api_ids": [
+        "d5af91f6-a7ec-4015-b0a5-d25051158470"
+      ]
+    },
+    {
+      "key": "video:minimax-t2v",
+      "id": "minimax-t2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "hailuo",
+      "api_ids": [
+        "d5af91f6-a7ec-4015-b0a5-d25051158470"
+      ]
+    },
+    {
+      "key": "video:happyhorse-1.0-i2v",
+      "id": "happyhorse-1.0-i2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "happyhorse",
+      "api_ids": [
+        "d656e357-50cb-4390-b8c9-67464bc2a2f2"
+      ]
+    },
+    {
+      "key": "video:happyhorse-1.0-r2v",
+      "id": "happyhorse-1.0-r2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "happyhorse",
+      "api_ids": [
+        "d656e357-50cb-4390-b8c9-67464bc2a2f2"
+      ]
+    },
+    {
+      "key": "video:happyhorse-1.0-t2v",
+      "id": "happyhorse-1.0-t2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "happyhorse",
+      "api_ids": [
+        "d656e357-50cb-4390-b8c9-67464bc2a2f2"
+      ]
+    },
+    {
+      "key": "video:happyhorse-1.0-video-edit",
+      "id": "happyhorse-1.0-video-edit",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "happyhorse",
+      "api_ids": [
+        "d656e357-50cb-4390-b8c9-67464bc2a2f2"
+      ]
+    },
+    {
+      "key": "video:happyhorse-1.1-i2v",
+      "id": "happyhorse-1.1-i2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "happyhorse",
+      "api_ids": [
+        "d656e357-50cb-4390-b8c9-67464bc2a2f2"
+      ]
+    },
+    {
+      "key": "video:happyhorse-1.1-r2v",
+      "id": "happyhorse-1.1-r2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "happyhorse",
+      "api_ids": [
+        "d656e357-50cb-4390-b8c9-67464bc2a2f2"
+      ]
+    },
+    {
+      "key": "video:happyhorse-1.1-t2v",
+      "id": "happyhorse-1.1-t2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "happyhorse",
+      "api_ids": [
+        "d656e357-50cb-4390-b8c9-67464bc2a2f2"
+      ]
+    },
+    {
+      "key": "video:kling-o1",
+      "id": "kling-o1",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v1",
+      "id": "kling-v1",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v1-6",
+      "id": "kling-v1-6",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v2-1-master",
+      "id": "kling-v2-1-master",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v2-5-turbo",
+      "id": "kling-v2-5-turbo",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v2-6",
+      "id": "kling-v2-6",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v2-master",
+      "id": "kling-v2-master",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v3",
+      "id": "kling-v3",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v3-omni",
+      "id": "kling-v3-omni",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:kling-v3-turbo",
+      "id": "kling-v3-turbo",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "kling",
+      "api_ids": [
+        "29187cb2-1acb-43b8-baf5-3f3f709292eb"
+      ]
+    },
+    {
+      "key": "video:luma",
+      "id": "luma",
+      "kind": "service",
+      "modality": "video",
+      "service_alias": "luma",
+      "api_ids": [
+        "94fc9028-5a9f-4875-aae4-38463bd30ac5"
+      ]
+    },
+    {
+      "key": "video:maestro",
+      "id": "maestro",
+      "kind": "service",
+      "modality": "video",
+      "service_alias": "maestro",
+      "api_ids": [
+        "ab512c42-324c-42e6-8d79-49a5042f3548"
+      ]
+    },
+    {
+      "key": "video:MiniMax-H3",
+      "id": "MiniMax-H3",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "minimax",
+      "api_ids": [
+        "64f22fd9-0efd-445e-b0b1-135682fd66d7"
+      ]
+    },
+    {
+      "key": "image:nano-banana",
+      "id": "nano-banana",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana-2",
+      "id": "nano-banana-2",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana-2-lite",
+      "id": "nano-banana-2-lite",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana-2-lite:official",
+      "id": "nano-banana-2-lite:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana-2.1",
+      "id": "nano-banana-2.1",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana-2:official",
+      "id": "nano-banana-2:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana-pro",
+      "id": "nano-banana-pro",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana-pro:official",
+      "id": "nano-banana-pro:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:nano-banana:official",
+      "id": "nano-banana:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "nano-banana",
+      "api_ids": [
+        "9d8a117e-31ca-4322-a0fd-1771296ec610"
+      ]
+    },
+    {
+      "key": "image:dall-e-2",
+      "id": "dall-e-2",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:dall-e-3",
+      "id": "dall-e-3",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-1",
+      "id": "gpt-image-1",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-1.5",
+      "id": "gpt-image-1.5",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2",
+      "id": "gpt-image-2",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.5-flare",
+      "id": "gpt-image-2.5-flare",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.5-flare:official",
+      "id": "gpt-image-2.5-flare:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.5-flare:reverse",
+      "id": "gpt-image-2.5-flare:reverse",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.5-sunburst",
+      "id": "gpt-image-2.5-sunburst",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.5-sunburst:official",
+      "id": "gpt-image-2.5-sunburst:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.5-sunburst:reverse",
+      "id": "gpt-image-2.5-sunburst:reverse",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.6-flare",
+      "id": "gpt-image-2.6-flare",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.6-flare:official",
+      "id": "gpt-image-2.6-flare:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.6-flare:reverse",
+      "id": "gpt-image-2.6-flare:reverse",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.6-sunburst",
+      "id": "gpt-image-2.6-sunburst",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.6-sunburst:official",
+      "id": "gpt-image-2.6-sunburst:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2.6-sunburst:reverse",
+      "id": "gpt-image-2.6-sunburst:reverse",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2:official",
+      "id": "gpt-image-2:official",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "image:gpt-image-2:reverse",
+      "id": "gpt-image-2:reverse",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "openai",
+      "api_ids": [
+        "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+        "fb74083e-bb68-48d5-8ba6-b5a224400cd3"
+      ]
+    },
+    {
+      "key": "audio:gpt-transcribe",
+      "id": "gpt-transcribe",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "openai",
+      "api_ids": [
+        "60f037ff-7d2f-4ea4-ae42-feba542c8cb2"
+      ]
+    },
+    {
+      "key": "embedding:text-embedding-3-large",
+      "id": "text-embedding-3-large",
+      "kind": "model",
+      "modality": "embedding",
+      "service_alias": "openai",
+      "api_ids": [
+        "a0840c8a-2b9a-4407-8aaf-0057f0e1f65c"
+      ]
+    },
+    {
+      "key": "embedding:text-embedding-3-small",
+      "id": "text-embedding-3-small",
+      "kind": "model",
+      "modality": "embedding",
+      "service_alias": "openai",
+      "api_ids": [
+        "a0840c8a-2b9a-4407-8aaf-0057f0e1f65c"
+      ]
+    },
+    {
+      "key": "audio:tts-1",
+      "id": "tts-1",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "openai",
+      "api_ids": [
+        "078d0146-f820-4617-b98e-47ba15a93d60"
+      ]
+    },
+    {
+      "key": "audio:tts-1-hd",
+      "id": "tts-1-hd",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "openai",
+      "api_ids": [
+        "078d0146-f820-4617-b98e-47ba15a93d60"
+      ]
+    },
+    {
+      "key": "audio:whisper-1",
+      "id": "whisper-1",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "openai",
+      "api_ids": [
+        "60f037ff-7d2f-4ea4-ae42-feba542c8cb2"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-0.8",
+      "id": "FUZZ-0.8",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-1.0",
+      "id": "FUZZ-1.0",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-1.0 Pro",
+      "id": "FUZZ-1.0 Pro",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-1.1",
+      "id": "FUZZ-1.1",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-1.1 Pro",
+      "id": "FUZZ-1.1 Pro",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-2.0",
+      "id": "FUZZ-2.0",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-2.0 Pro",
+      "id": "FUZZ-2.0 Pro",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "audio:FUZZ-2.0 Raw",
+      "id": "FUZZ-2.0 Raw",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "producer",
+      "api_ids": [
+        "01d96900-9f8c-41d7-814c-95c7a885ba61"
+      ]
+    },
+    {
+      "key": "image:qwen-image-3.0",
+      "id": "qwen-image-3.0",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "qwen-image",
+      "api_ids": [
+        "d0b8a0b6-9471-4c53-aad2-290e68b2ebdb"
+      ]
+    },
+    {
+      "key": "image:qwen-image-3.0-pro",
+      "id": "qwen-image-3.0-pro",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "qwen-image",
+      "api_ids": [
+        "d0b8a0b6-9471-4c53-aad2-290e68b2ebdb"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-1-0-lite-i2v-250428",
+      "id": "doubao-seedance-1-0-lite-i2v-250428",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-1-0-lite-t2v-250428",
+      "id": "doubao-seedance-1-0-lite-t2v-250428",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-1-0-pro-250528",
+      "id": "doubao-seedance-1-0-pro-250528",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-1-0-pro-fast-251015",
+      "id": "doubao-seedance-1-0-pro-fast-251015",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-1-5-pro-251215",
+      "id": "doubao-seedance-1-5-pro-251215",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-2-0-260128",
+      "id": "doubao-seedance-2-0-260128",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-2-0-fast-260128",
+      "id": "doubao-seedance-2-0-fast-260128",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-2-0-mini-260615",
+      "id": "doubao-seedance-2-0-mini-260615",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "video:doubao-seedance-2-5-260628",
+      "id": "doubao-seedance-2-5-260628",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "seedance",
+      "api_ids": [
+        "0083b874-4da6-40df-87e3-835b1300c1e8"
+      ]
+    },
+    {
+      "key": "image:doubao-seedream-4-0-250828",
+      "id": "doubao-seedream-4-0-250828",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "seedream",
+      "api_ids": [
+        "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e"
+      ]
+    },
+    {
+      "key": "image:doubao-seedream-4-5-251128",
+      "id": "doubao-seedream-4-5-251128",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "seedream",
+      "api_ids": [
+        "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e"
+      ]
+    },
+    {
+      "key": "image:doubao-seedream-5-0-lite-260128",
+      "id": "doubao-seedream-5-0-lite-260128",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "seedream",
+      "api_ids": [
+        "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e"
+      ]
+    },
+    {
+      "key": "image:doubao-seedream-5-0-pro-260628",
+      "id": "doubao-seedream-5-0-pro-260628",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "seedream",
+      "api_ids": [
+        "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e"
+      ]
+    },
+    {
+      "key": "search:serp",
+      "id": "serp",
+      "kind": "service",
+      "modality": "search",
+      "service_alias": "serp",
+      "api_ids": [
+        "7753ed09-1046-46d3-ad80-cd7ff19676b5"
+      ]
+    },
+    {
+      "key": "audio:chirp-v3-0",
+      "id": "chirp-v3-0",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v3-5",
+      "id": "chirp-v3-5",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v4",
+      "id": "chirp-v4",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v4-5",
+      "id": "chirp-v4-5",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v4-5-plus",
+      "id": "chirp-v4-5-plus",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v5",
+      "id": "chirp-v5",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v5-5",
+      "id": "chirp-v5-5",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v6",
+      "id": "chirp-v6",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v6-mini",
+      "id": "chirp-v6-mini",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "audio:chirp-v6-wild",
+      "id": "chirp-v6-wild",
+      "kind": "model",
+      "modality": "audio",
+      "service_alias": "suno",
+      "api_ids": [
+        "09a26295-5972-4392-9318-dcd9b218f90d"
+      ]
+    },
+    {
+      "key": "video:veo3",
+      "id": "veo3",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "veo",
+      "api_ids": [
+        "52a0fa83-3c78-4793-b45a-c1a5c869ae46"
+      ]
+    },
+    {
+      "key": "video:veo3-fast",
+      "id": "veo3-fast",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "veo",
+      "api_ids": [
+        "52a0fa83-3c78-4793-b45a-c1a5c869ae46"
+      ]
+    },
+    {
+      "key": "video:veo31",
+      "id": "veo31",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "veo",
+      "api_ids": [
+        "52a0fa83-3c78-4793-b45a-c1a5c869ae46"
+      ]
+    },
+    {
+      "key": "video:veo31-fast",
+      "id": "veo31-fast",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "veo",
+      "api_ids": [
+        "52a0fa83-3c78-4793-b45a-c1a5c869ae46"
+      ]
+    },
+    {
+      "key": "video:veo31-fast-ingredients",
+      "id": "veo31-fast-ingredients",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "veo",
+      "api_ids": [
+        "52a0fa83-3c78-4793-b45a-c1a5c869ae46"
+      ]
+    },
+    {
+      "key": "video:wan2.6-i2v",
+      "id": "wan2.6-i2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "wan",
+      "api_ids": [
+        "6a4ecdbf-b219-4505-8277-5ec4b1ac14f8"
+      ]
+    },
+    {
+      "key": "video:wan2.6-i2v-flash",
+      "id": "wan2.6-i2v-flash",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "wan",
+      "api_ids": [
+        "6a4ecdbf-b219-4505-8277-5ec4b1ac14f8"
+      ]
+    },
+    {
+      "key": "video:wan2.6-r2v",
+      "id": "wan2.6-r2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "wan",
+      "api_ids": [
+        "6a4ecdbf-b219-4505-8277-5ec4b1ac14f8"
+      ]
+    },
+    {
+      "key": "video:wan2.6-t2v",
+      "id": "wan2.6-t2v",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "wan",
+      "api_ids": [
+        "6a4ecdbf-b219-4505-8277-5ec4b1ac14f8"
+      ]
+    },
+    {
+      "key": "video:wan3.0-video",
+      "id": "wan3.0-video",
+      "kind": "model",
+      "modality": "video",
+      "service_alias": "wan",
+      "api_ids": [
+        "6a4ecdbf-b219-4505-8277-5ec4b1ac14f8"
+      ]
+    }
+  ]
+}

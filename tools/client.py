@@ -68,7 +68,7 @@ def clean_result(value: Any) -> Any:
     return value
 
 
-def media_urls(value: Any, *, prefer_audio: bool = False) -> list[str]:
+def media_urls(value: Any, *, prefer_audio: bool = False, allowed_keys=None) -> list[str]:
     result: list[str] = []
     audio_result: list[str] = []
 
@@ -76,7 +76,7 @@ def media_urls(value: Any, *, prefer_audio: bool = False) -> list[str]:
         if isinstance(node, dict):
             for key, item in node.items():
                 if (
-                    key in MEDIA_KEYS
+                    key in (MEDIA_KEYS if allowed_keys is None else allowed_keys)
                     and isinstance(item, str)
                     and item.startswith(("https://", "http://"))
                 ):
@@ -350,6 +350,11 @@ class AceMediaClient:
                     resolved_id,
                     retrieved=True,
                     prefer_audio=endpoint.get("prefer_audio", False),
+                    allowed_media_keys=endpoint.get("result_media_keys"),
+                    extra_complete_states=endpoint.get("extra_complete_states", []),
+                    task_record_status_authoritative=endpoint.get(
+                        "task_record_status_authoritative", False
+                    ),
                 )
                 if result["status"] != "pending" or time.monotonic() >= deadline:
                     return result
@@ -382,6 +387,11 @@ class AceMediaClient:
                             str(item.get("id") or item.get("task_id") or ""),
                             retrieved=True,
                             prefer_audio=endpoint.get("prefer_audio", False),
+                            allowed_media_keys=endpoint.get("result_media_keys"),
+                            extra_complete_states=endpoint.get("extra_complete_states", []),
+                            task_record_status_authoritative=endpoint.get(
+                                "task_record_status_authoritative", False
+                            ),
                         )
                     )
                 except AceMediaError:
@@ -428,6 +438,11 @@ class AceMediaClient:
             task_id,
             synchronous=not asynchronous,
             prefer_audio=endpoint.get("prefer_audio", False),
+            allowed_media_keys=endpoint.get("result_media_keys"),
+            extra_complete_states=endpoint.get("extra_complete_states", []),
+            task_record_status_authoritative=endpoint.get(
+                "task_record_status_authoritative", False
+            ),
         )
 
     def normalize(
@@ -438,6 +453,9 @@ class AceMediaClient:
         retrieved: bool = False,
         synchronous: bool = False,
         prefer_audio: bool = False,
+        allowed_media_keys=None,
+        extra_complete_states=(),
+        task_record_status_authoritative=False,
     ) -> dict[str, Any]:
         pending = {
             "status": "pending",
@@ -483,7 +501,17 @@ class AceMediaClient:
 
         if not (synchronous and not task_id):
             visit(result)
-        urls = media_urls(clean_result(result), prefer_audio=prefer_audio)
+        if (
+            task_record_status_authoritative
+            and retrieved
+            and isinstance(body, dict)
+            and isinstance(body.get("status"), str)
+        ):
+            states = [body["status"].lower()]
+        urls = media_urls(
+            clean_result(result), prefer_audio=prefer_audio, allowed_keys=allowed_media_keys
+        )
+        complete = COMPLETE | set(extra_complete_states)
         failures = errors or any(s in FAILED for s in states)
         if failures and not unfinished and not (urls and False):
             raise AceMediaError(
@@ -491,11 +519,11 @@ class AceMediaClient:
             )
         done = (
             (synchronous and not task_id)
-            or (bool(states) and all(s in COMPLETE for s in states))
+            or (bool(states) and all(s in complete for s in states))
             or (bool(urls) and not states)
         )
         if failures and urls and False:
-            done = all(s in COMPLETE | FAILED for s in states)
+            done = all(s in complete | FAILED for s in states)
         if (
             retrieved
             and isinstance(body, dict)
@@ -867,6 +895,24 @@ def finalize_payload_suno(
 def finalize_payload(
     tool: str, body: dict[str, Any], values: dict[str, Any], endpoint: dict[str, Any]
 ) -> dict[str, Any]:
+    if endpoint["service"] == "digitalhuman" and endpoint["path"] == "/digital-human/videos":
+        if not (body.get("video_url") or body.get("image_url")):
+            raise ValueError("Provide a source video URL or image URL.")
+        if not body.get("audio_url") and not (body.get("text") and body.get("voice_id")):
+            raise ValueError("Provide driving audio, or text together with an owned voice ID.")
+    if endpoint["service"] == "gemini" and endpoint["path"] == "/gemini/videos":
+        for field in ("image_urls", "video_urls"):
+            if isinstance(body.get(field), list):
+                if any(not isinstance(value, str) for value in body[field]):
+                    raise ValueError("Reference URLs must be strings.")
+                body[field] = [value.strip() for value in body[field] if value.strip()]
+        if body.get("video_urls") and not body.get("image_urls"):
+            raise ValueError("Video editing requires at least one reference image URL.")
+    if endpoint["service"] == "maestro" and endpoint["path"] == "/maestro/videos":
+        if body.get("action", "generate") != "generate" and not body.get("ref_task_id"):
+            raise ValueError("Remix, edit and extend require the original reference task ID.")
+        if body.get("scenario") in {"avatar", "captions"} and not body.get("file_urls"):
+            raise ValueError("The selected scenario requires appropriate reference media URLs.")
     if endpoint["service"] == "flux":
         return finalize_payload_flux(tool, body, values, endpoint)
     if endpoint["service"] == "gpt_image":

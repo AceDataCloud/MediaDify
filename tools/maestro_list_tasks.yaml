@@ -1,0 +1,77 @@
+identity:
+  name: maestro_list_tasks
+  author: acedatacloud
+  label:
+    en_US: Maestro List Recent Tasks
+    zh_Hans: Maestro List Recent Tasks
+description:
+  human:
+    en_US: Maestro List Recent Tasks through the published Ace Data Cloud API. Preserve
+      the returned task ID and query the same service until completion.
+    zh_Hans: Maestro List Recent Tasks through the published Ace Data Cloud API. Preserve
+      the returned task ID and query the same service until completion.
+  llm: Maestro List Recent Tasks through the published Ace Data Cloud API. Preserve
+    the returned task ID and query the same service until completion.
+parameters:
+- name: limit
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Limit
+    zh_Hans: 条数
+  human_description:
+    en_US: Maximum number of tasks to return. Default is 20; valid range is 1–100.
+    zh_Hans: Maximum number of tasks to return. Default is 20; valid range is 1–100.
+  llm_description: Maximum number of tasks to return. Default is 20; valid range is
+    1–100.
+  default: 20
+- name: created_at_max
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Created at max
+    zh_Hans: 截止时间戳
+  human_description:
+    en_US: Only return tasks whose creation time is strictly earlier than this Unix
+      timestamp (in seconds). The boundary value is not included in the results.
+    zh_Hans: Only return tasks whose creation time is strictly earlier than this Unix
+      timestamp (in seconds). The boundary value is not included in the results.
+  llm_description: Only return tasks whose creation time is strictly earlier than
+    this Unix timestamp (in seconds). The boundary value is not included in the results.
+- name: created_at_min
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Created at min
+    zh_Hans: 起始时间戳
+  human_description:
+    en_US: Only return tasks whose creation time is strictly later than this Unix
+      timestamp (in seconds). The boundary value is not included in the results.
+    zh_Hans: Only return tasks whose creation time is strictly later than this Unix
+      timestamp (in seconds). The boundary value is not included in the results.
+  llm_description: Only return tasks whose creation time is strictly later than this
+    Unix timestamp (in seconds). The boundary value is not included in the results.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/maestro_list_tasks.py

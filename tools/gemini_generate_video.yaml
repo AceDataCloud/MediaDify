@@ -1,0 +1,163 @@
+identity:
+  name: gemini_generate_video
+  author: acedatacloud
+  label:
+    en_US: Gemini Omni Flash Video Generate Video
+    zh_Hans: Gemini Omni Flash Video Generate Video
+description:
+  human:
+    en_US: Gemini Omni Flash Video Generate Video through the published Ace Data Cloud
+      API. Preserve the returned task ID and query the same service until completion.
+    zh_Hans: Gemini Omni Flash Video Generate Video through the published Ace Data
+      Cloud API. Preserve the returned task ID and query the same service until completion.
+  llm: Gemini Omni Flash Video Generate Video through the published Ace Data Cloud
+    API. Preserve the returned task ID and query the same service until completion.
+parameters:
+- name: prompt
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Describe the text prompts for the video content to be generated.
+    zh_Hans: Describe the text prompts for the video content to be generated.
+  llm_description: Describe the text prompts for the video content to be generated.
+- name: model
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Model
+    zh_Hans: 模型
+  human_description:
+    en_US: Models used for generating videos. Currently, only `omni-flash` is supported.
+    zh_Hans: Models used for generating videos. Currently, only `omni-flash` is supported.
+  llm_description: Models used for generating videos. Currently, only `omni-flash`
+    is supported.
+  options:
+  - value: omni-flash
+    label:
+      en_US: omni-flash
+      zh_Hans: omni-flash
+  default: omni-flash
+- name: aspect_ratio
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Aspect ratio
+    zh_Hans: 画面比例
+  human_description:
+    en_US: Generate the aspect ratio of the video. `16:9` is for landscape, `9:16`
+      is for portrait.
+    zh_Hans: Generate the aspect ratio of the video. `16:9` is for landscape, `9:16`
+      is for portrait.
+  llm_description: Generate the aspect ratio of the video. `16:9` is for landscape,
+    `9:16` is for portrait.
+  options:
+  - value: '16:9'
+    label:
+      en_US: '16:9'
+      zh_Hans: '16:9'
+  - value: '9:16'
+    label:
+      en_US: '9:16'
+      zh_Hans: '9:16'
+  default: '16:9'
+- name: resolution
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Resolution
+    zh_Hans: 分辨率
+  human_description:
+    en_US: Output resolution for the generated video. Options are `720p` or `1080p`,
+      default is `720p`.
+    zh_Hans: Output resolution for the generated video. Options are `720p` or `1080p`,
+      default is `720p`.
+  llm_description: Output resolution for the generated video. Options are `720p` or
+    `1080p`, default is `720p`.
+  options:
+  - value: 720p
+    label:
+      en_US: 720p
+      zh_Hans: 720p
+  - value: 1080p
+    label:
+      en_US: 1080p
+      zh_Hans: 1080p
+  default: 720p
+- name: image_urls
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Image urls
+    zh_Hans: 图片 URL 数组
+  human_description:
+    en_US: An optional array of reference image URLs for guiding video generation;
+      blank entries will be ignored. This parameter is required when using `video_urls`
+      for video editing (at least one image). Enter valid JSON.
+    zh_Hans: An optional array of reference image URLs for guiding video generation;
+      blank entries will be ignored. This parameter is required when using `video_urls`
+      for video editing (at least one image).
+  llm_description: An optional array of reference image URLs for guiding video generation;
+    blank entries will be ignored. This parameter is required when using `video_urls`
+    for video editing (at least one image). Enter valid JSON.
+- name: video_urls
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Video urls
+    zh_Hans: 视频 URL 数组
+  human_description:
+    en_US: Optional reference video URL array (up to 1), for video editing / video
+      reference. At least one `image_urls` must be provided when available. Enter
+      valid JSON.
+    zh_Hans: Optional reference video URL array (up to 1), for video editing / video
+      reference. At least one `image_urls` must be provided when available.
+  llm_description: Optional reference video URL array (up to 1), for video editing
+    / video reference. At least one `image_urls` must be provided when available.
+    Enter valid JSON.
+- name: callback_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Callback url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: The URL for the callback after the video generation is complete. Once provided,
+      the request will immediately return `task_id`, and the results will be pushed
+      asynchronously.
+    zh_Hans: The URL for the callback after the video generation is complete. Once
+      provided, the request will immediately return `task_id`, and the results will
+      be pushed asynchronously.
+  llm_description: The URL for the callback after the video generation is complete.
+    Once provided, the request will immediately return `task_id`, and the results
+    will be pushed asynchronously.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/gemini_generate_video.py

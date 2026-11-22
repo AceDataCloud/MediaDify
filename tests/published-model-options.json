@@ -496,6 +496,30 @@
       "model": "body"
     }
   },
+  "dreamina_generate_video": {
+    "api_id": "b3880780-678f-4495-bda7-3a1ecf42781c",
+    "path": "/dreamina/videos",
+    "options": {
+      "model": [
+        "omnihuman-1.5"
+      ]
+    },
+    "locations": {
+      "model": "body"
+    }
+  },
+  "gemini_generate_video": {
+    "api_id": "d9d2fd18-5b1e-4218-b572-a75cf46f5451",
+    "path": "/gemini/videos",
+    "options": {
+      "model": [
+        "omni-flash"
+      ]
+    },
+    "locations": {
+      "model": "body"
+    }
+  },
   "acemusic": {
     "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f",
     "path": "/acemusic/audios",

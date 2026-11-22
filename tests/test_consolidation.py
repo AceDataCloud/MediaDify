@@ -31,7 +31,7 @@ def test_one_provider_keeps_all_original_native_tool_names_and_loads_each_implem
     expected = {name for source in SOURCES for name in source["tool_names"]}
     retired = {row["tool"] for row in json.loads(Path("tests/retired-tools.json").read_text())}
     expected -= retired
-    assert len(expected) == 110 and len(SOURCES) == 21
+    assert len(expected) == 124 and len(SOURCES) == 25
     assert set(actual) == expected
     for name in expected:
         assert registration.get_tool_cls("ace_media", name) is not None

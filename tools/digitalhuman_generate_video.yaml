@@ -1,0 +1,156 @@
+identity:
+  name: digitalhuman_generate_video
+  author: acedatacloud
+  label:
+    en_US: Digital Human Generate Video
+    zh_Hans: Digital Human Generate Video
+description:
+  human:
+    en_US: Digital Human Generate Video through the published Ace Data Cloud API.
+      Preserve the returned task ID and query the same service until completion.
+    zh_Hans: Digital Human Generate Video through the published Ace Data Cloud API.
+      Preserve the returned task ID and query the same service until completion.
+  llm: Digital Human Generate Video through the published Ace Data Cloud API. Preserve
+    the returned task ID and query the same service until completion.
+parameters:
+- name: text
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Text
+    zh_Hans: 文本
+  human_description:
+    en_US: Spoken text -> TTS (requires voice_id).
+    zh_Hans: Spoken text -> TTS (requires voice_id).
+  llm_description: Spoken text -> TTS (requires voice_id).
+- name: speed
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Speed
+    zh_Hans: 语速
+  human_description:
+    en_US: Audio tempo multiplier.
+    zh_Hans: Audio tempo multiplier.
+  llm_description: Audio tempo multiplier.
+  default: 1.0
+- name: steps
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Steps
+    zh_Hans: 扩散步数
+  human_description:
+    en_US: Diffusion steps (LatentSync).
+    zh_Hans: Diffusion steps (LatentSync).
+  llm_description: Diffusion steps (LatentSync).
+  default: 40
+- name: guidance
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Guidance
+    zh_Hans: 口型同步强度
+  human_description:
+    en_US: Lip-sync strength (LatentSync). Lower loosens sync.
+    zh_Hans: Lip-sync strength (LatentSync). Lower loosens sync.
+  llm_description: Lip-sync strength (LatentSync). Lower loosens sync.
+  default: 2.0
+- name: seam_fix
+  type: boolean
+  required: false
+  form: llm
+  label:
+    en_US: Seam fix
+    zh_Hans: 口型边缘融合
+  human_description:
+    en_US: Apply the mouth-seam reduction blend.
+    zh_Hans: Apply the mouth-seam reduction blend.
+  llm_description: Apply the mouth-seam reduction blend.
+  default: true
+- name: voice_id
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Voice id
+    zh_Hans: 声音 ID
+  human_description:
+    en_US: A cloned voice from POST /digital-human/voices.
+    zh_Hans: A cloned voice from POST /digital-human/voices.
+  llm_description: A cloned voice from POST /digital-human/voices.
+- name: audio_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Audio url
+    zh_Hans: 音频 URL
+  human_description:
+    en_US: Public URL of the driving audio (.wav/.mp3/.m4a). OR supply text(+voice_id).
+    zh_Hans: Public URL of the driving audio (.wav/.mp3/.m4a). OR supply text(+voice_id).
+  llm_description: Public URL of the driving audio (.wav/.mp3/.m4a). OR supply text(+voice_id).
+- name: image_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Image url
+    zh_Hans: 图片 URL
+  human_description:
+    en_US: Public URL of a source face photo (photo-driven path). Supply either video_url
+      or image_url.
+    zh_Hans: Public URL of a source face photo (photo-driven path). Supply either
+      video_url or image_url.
+  llm_description: Public URL of a source face photo (photo-driven path). Supply either
+    video_url or image_url.
+- name: video_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Video url
+    zh_Hans: 视频 URL
+  human_description:
+    en_US: Public URL of the source face video (preferred). Supply either video_url
+      or image_url.
+    zh_Hans: Public URL of the source face video (preferred). Supply either video_url
+      or image_url.
+  llm_description: Public URL of the source face video (preferred). Supply either
+    video_url or image_url.
+- name: callback_url
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Callback url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Webhook; if set (or async=true) returns task_id immediately.
+    zh_Hans: Webhook; if set (or async=true) returns task_id immediately.
+  llm_description: Webhook; if set (or async=true) returns task_id immediately.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/digitalhuman_generate_video.py

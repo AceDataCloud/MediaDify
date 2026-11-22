@@ -1,0 +1,65 @@
+[
+  {
+    "api_id": "5ced04db-8d92-4a6b-b988-91423dcc1f02",
+    "path": "/digital-human/videos",
+    "stage": "Beta",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/5ced04db-8d92-4a6b-b988-91423dcc1f02/",
+    "definition_sha256": "07eef0c70f836bdec3a4a546d4618340fb0358a7cdc842532e5b80366f636487"
+  },
+  {
+    "api_id": "ab512c42-324c-42e6-8d79-49a5042f3548",
+    "path": "/maestro/videos",
+    "stage": "Beta",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/ab512c42-324c-42e6-8d79-49a5042f3548/",
+    "definition_sha256": "5454f63aa14bf4fd67684883f5858007f229dfd0bb87f5a1dcaa3b936d177b25"
+  },
+  {
+    "api_id": "b3880780-678f-4495-bda7-3a1ecf42781c",
+    "path": "/dreamina/videos",
+    "stage": "Beta",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/b3880780-678f-4495-bda7-3a1ecf42781c/",
+    "definition_sha256": "c9bfcb9c0a3635f8d6f2505316839d447af5ffbce96b05d50c57d8a4bcf3d9d9"
+  },
+  {
+    "api_id": "d9d2fd18-5b1e-4218-b572-a75cf46f5451",
+    "path": "/gemini/videos",
+    "stage": "Beta",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/d9d2fd18-5b1e-4218-b572-a75cf46f5451/",
+    "definition_sha256": "ea78167b522bddfaa1f9108b33467cee7fd7e1443d6209737a6c04ddf302cfa7"
+  },
+  {
+    "api_id": "c334172a-a0b1-451f-8137-d9c9830a15b9",
+    "path": "/digital-human/voices",
+    "stage": "Beta",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/c334172a-a0b1-451f-8137-d9c9830a15b9/",
+    "definition_sha256": "587782559827b394166d47a799a51826a126da40acc517840f354b5b5454aa93"
+  },
+  {
+    "api_id": "74bb973d-939a-4a6e-89f4-1667deb8ea3b",
+    "path": "/digital-human/tasks",
+    "stage": "Production",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/74bb973d-939a-4a6e-89f4-1667deb8ea3b/",
+    "definition_sha256": "5596db10dfb2906710c922eae098395f3e41c8993b0d817e614eeeeac62da2e0"
+  },
+  {
+    "api_id": "553a0038-eef7-4e79-87c7-9d4e7321ca9b",
+    "path": "/maestro/tasks",
+    "stage": "Production",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/553a0038-eef7-4e79-87c7-9d4e7321ca9b/",
+    "definition_sha256": "e75399110ec9d9b6e144c6310e77e1032e919ccdb71df06c4b81aee73fab6d0a"
+  },
+  {
+    "api_id": "e6bd925d-0c49-47be-a5c5-d087604a8e75",
+    "path": "/gemini/tasks",
+    "stage": "Production",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/e6bd925d-0c49-47be-a5c5-d087604a8e75/",
+    "definition_sha256": "778162d2d3394acb5f9a84bd30355138f87c6f223d5836fdc8a3a9208eeede12"
+  },
+  {
+    "api_id": "b35fd461-8da1-4aec-9e40-5e361ed26223",
+    "path": "/dreamina/tasks",
+    "stage": "Beta",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/b35fd461-8da1-4aec-9e40-5e361ed26223/",
+    "definition_sha256": "03935609c7ca310f3bfc88b35d5d7f6c041fe3876be49f1dffb3a3307926b749"
+  }
+]
