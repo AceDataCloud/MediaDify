@@ -2,9 +2,9 @@
 
 One **Ace Data Cloud** provider brings **110 active native tools across 21 service families** into Dify. It consolidates the existing image, video, music, speech, face and search integrations. Each service keeps its own tool names and controls; one General application API key is configured on the provider.
 
-**Release status:** this is a consolidated source/package candidate. It is not yet listed or verified on Dify Marketplace. Official review includes the consolidation and migration proposal below. No existing plugin is uninstalled, and no existing workflow is changed automatically.
+**Distribution:** source/release packages alone do not establish a Marketplace listing or Verified status. Check the [official Marketplace page](https://marketplace.dify.ai/plugin/acedatacloud/ace_media) for current availability; until accepted, use only your workspace's permitted local-package flow. The official consolidation review determines the transition schedule. No existing plugin is uninstalled, and no existing workflow is changed automatically.
 
-[Source](https://github.com/AceDataCloud/MediaDify) · [Issues](https://github.com/AceDataCloud/MediaDify/issues) · [简体中文](readme/README_zh_Hans.md) · dev@acedata.cloud
+[Source](https://github.com/AceDataCloud/MediaDify) · [Issues](https://github.com/AceDataCloud/MediaDify/issues) · [Simplified Chinese](readme/README_zh_Hans.md) · dev@acedata.cloud
 
 ## Install and configure
 
@@ -108,7 +108,7 @@ ruff check .
 ruff format --check .
 python scripts/sync_models.py --refresh
 python scripts/sync_models.py --check
-dify plugin package . -o ../ace_media-0.1.0.difypkg
+dify plugin package . -o ../ace_media-0.1.1.difypkg
 ```
 
 The normal test suite loads every tool through the real Dify SDK, replays source request-contract examples, checks original-task and batch behavior, and verifies model/picker/runtime parity. Tests use offline responses; they do not make paid calls. The new consolidated package has not been represented as a fresh Dify Cloud or live paid-generation acceptance. Source/CLI validation and official Marketplace publication are separate steps.
