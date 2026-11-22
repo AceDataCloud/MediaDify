@@ -6,6 +6,23 @@
       "face_model_version": [
         "3.0"
       ]
+    },
+    "locations": {
+      "face_model_version": "body"
+    }
+  },
+  "fish_generate_audio": {
+    "api_id": "77adcb84-d59f-5ef9-b8a0-8b35eb42a71d",
+    "path": "/fish/tts",
+    "options": {
+      "model": [
+        "s1",
+        "s2-pro",
+        "s2.1-pro"
+      ]
+    },
+    "locations": {
+      "model": "header"
     }
   },
   "flux_generate_image": {
@@ -22,6 +39,9 @@
         "flux-2-max",
         "flux-2-klein"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "flux_edit_image": {
@@ -38,6 +58,9 @@
         "flux-2-max",
         "flux-2-klein"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "gpt_image_generate_image": {
@@ -70,6 +93,9 @@
         "gpt-image-2.6-sunburst:reverse",
         "gpt-image-2.6-sunburst:official"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "gpt_image_edit_image": {
@@ -102,6 +128,9 @@
         "gpt-image-2.6-sunburst:reverse",
         "gpt-image-2.6-sunburst:official"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "grok_generate_video": {
@@ -115,6 +144,9 @@
         "grok-imagine-video-1.5:official",
         "grok-imagine-video"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "grok_chat_completions": {
@@ -127,6 +159,9 @@
         "grok-4",
         "grok-3"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "hailuo_generate_video": {
@@ -138,6 +173,9 @@
         "minimax-t2v",
         "minimax-i2v-director"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "happyhorse_generate_video": {
@@ -153,6 +191,9 @@
         "happyhorse-1.1-r2v",
         "happyhorse-1.0-video-edit"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "kling_generate_video": {
@@ -171,6 +212,9 @@
         "kling-v3-omni",
         "kling-o1"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "kling_generate_motion": {
@@ -181,6 +225,9 @@
         "kling-v2-6",
         "kling-v3"
       ]
+    },
+    "locations": {
+      "model_name": "body"
     }
   },
   "kling_talking_photo": {
@@ -195,6 +242,9 @@
         "kling-v2-5-turbo",
         "kling-v2-6"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "midjourney_imagine": {
@@ -210,6 +260,9 @@
         "6",
         "5.2"
       ]
+    },
+    "locations": {
+      "version": "body"
     }
   },
   "minimax_generate_video": {
@@ -219,6 +272,9 @@
       "model": [
         "MiniMax-H3"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "nano_banana_generate_image": {
@@ -236,6 +292,9 @@
         "nano-banana-2:official",
         "nano-banana-pro:official"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "nano_banana_edit_image": {
@@ -253,6 +312,9 @@
         "nano-banana-2:official",
         "nano-banana-pro:official"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "producer_generate_audios": {
@@ -269,6 +331,9 @@
         "FUZZ-1.1",
         "FUZZ-0.8"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "qwen_image": {
@@ -279,6 +344,9 @@
         "qwen-image-3.0",
         "qwen-image-3.0-pro"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "seedance_generate_video": {
@@ -296,6 +364,9 @@
         "doubao-seedance-2-0-mini-260615",
         "doubao-seedance-2-5-260628"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "seedream_generate_image": {
@@ -308,6 +379,9 @@
         "doubao-seedream-4-0-250828",
         "doubao-seedream-4-5-251128"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "seedream_edit_image": {
@@ -320,6 +394,9 @@
         "doubao-seedream-4-0-250828",
         "doubao-seedream-4-5-251128"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "seedream_decompose_image": {
@@ -332,6 +409,9 @@
         "doubao-seedream-4-0-250828",
         "doubao-seedream-4-5-251128"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "suno_generate_audios": {
@@ -350,6 +430,9 @@
         "chirp-v3-5",
         "chirp-v3-0"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "suno_generate_lyrics": {
@@ -360,6 +443,9 @@
         "default",
         "remi-v1"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "veo_generate_video": {
@@ -373,6 +459,9 @@
         "veo31",
         "veo31-fast-ingredients"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "wan_generate_video": {
@@ -386,6 +475,9 @@
         "wan2.6-t2v",
         "wan3.0-video"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "wan3_generate": {
@@ -399,6 +491,9 @@
         "wan2.6-t2v",
         "wan3.0-video"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   },
   "acemusic": {
@@ -409,6 +504,9 @@
         "acemusic-v1.1",
         "acemusic-v1"
       ]
+    },
+    "locations": {
+      "model": "body"
     }
   }
 }

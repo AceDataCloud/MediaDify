@@ -103,7 +103,7 @@ ruff check .
 ruff format --check .
 python scripts/sync_models.py --refresh
 python scripts/sync_models.py --check
-dify plugin package . -o ../ace_media-0.1.1.difypkg
+dify plugin package . -o ../ace_media-0.1.2.difypkg
 ```
 
 正常测试会通过真实 Dify SDK 加载全部工具，重放源请求契约并检查任务状态及模型控件一致性。测试使用离线响应，不调用付费服务。没有把新整合包声称为已完成 Dify Cloud 或新付费生成验收。源码/打包验证与官方上架是不同阶段。
