@@ -1,0 +1,144 @@
+identity:
+  author: acedatacloud
+  name: ace_media
+  label:
+    en_US: Ace Media and Tools
+    zh_Hans: Ace 媒体与工具
+  description:
+    en_US: One Ace Data Cloud provider for image, video, music, speech, face transformation
+      and search tools.
+    zh_Hans: 用一个 Ace Data Cloud 供应商使用图片、视频、音乐、语音、面部处理与搜索工具。
+  icon: icon.png
+  tags:
+  - image
+  - videos
+  - entertainment
+credentials_for_provider:
+  acedata_bearer_token:
+    type: secret-input
+    required: true
+    label:
+      en_US: Ace Data Cloud General application API key
+      zh_Hans: Ace Data Cloud 通用应用 API Key
+    placeholder:
+      en_US: Paste the raw API token without Bearer
+      zh_Hans: 粘贴原始 API Token，不加 Bearer
+    help:
+      en_US: Use a General application key with access to the selected services and
+        the read-only model catalog.
+      zh_Hans: 使用具有所选服务和只读模型目录权限的通用应用 Key。
+    url: https://platform.acedata.cloud/console/applications
+tools:
+- tools/face_generate.yaml
+- tools/fish_generate.yaml
+- tools/fish_search_voices.yaml
+- tools/fish_get_voice.yaml
+- tools/fish_create_model.yaml
+- tools/fish_task_retrieve.yaml
+- tools/fish_tasks_retrieve_batch.yaml
+- tools/flux_generate.yaml
+- tools/flux_edit.yaml
+- tools/flux_generate_video.yaml
+- tools/flux_task_retrieve.yaml
+- tools/flux_tasks_retrieve_batch.yaml
+- tools/gpt_image_generate.yaml
+- tools/gpt_image_edit.yaml
+- tools/gpt_image_list_tasks.yaml
+- tools/gpt_image_task_retrieve.yaml
+- tools/gpt_image_tasks_retrieve_batch.yaml
+- tools/serp_google.yaml
+- tools/grok_generate.yaml
+- tools/grok_chat_completions.yaml
+- tools/grok_task_retrieve.yaml
+- tools/grok_tasks_retrieve_batch.yaml
+- tools/hailuo_generate.yaml
+- tools/hailuo_task_retrieve.yaml
+- tools/hailuo_tasks_retrieve_batch.yaml
+- tools/happyhorse_generate.yaml
+- tools/happyhorse_task_retrieve.yaml
+- tools/happyhorse_tasks_retrieve_batch.yaml
+- tools/kling_generate.yaml
+- tools/kling_generate_motion.yaml
+- tools/kling_lip_sync.yaml
+- tools/kling_talking_photo.yaml
+- tools/kling_goods_studio.yaml
+- tools/kling_video_commerce.yaml
+- tools/kling_task_retrieve.yaml
+- tools/kling_tasks_retrieve_batch.yaml
+- tools/luma_generate.yaml
+- tools/luma_task_retrieve.yaml
+- tools/luma_tasks_retrieve_batch.yaml
+- tools/midjourney_imagine.yaml
+- tools/midjourney_edits.yaml
+- tools/midjourney_describe.yaml
+- tools/midjourney_translate.yaml
+- tools/midjourney_videos.yaml
+- tools/midjourney_get_seed.yaml
+- tools/midjourney_shorten.yaml
+- tools/midjourney_task_retrieve.yaml
+- tools/midjourney_tasks_retrieve_batch.yaml
+- tools/minimax_generate.yaml
+- tools/minimax_list_tasks.yaml
+- tools/minimax_delete_task.yaml
+- tools/minimax_task_retrieve.yaml
+- tools/minimax_tasks_retrieve_batch.yaml
+- tools/nano_banana_generate.yaml
+- tools/nano_banana_edit.yaml
+- tools/nano_banana_task_retrieve.yaml
+- tools/nano_banana_tasks_retrieve_batch.yaml
+- tools/producer_generate_audios.yaml
+- tools/producer_generate_lyrics.yaml
+- tools/producer_upload_reference_audio.yaml
+- tools/producer_get_video.yaml
+- tools/producer_get_wav.yaml
+- tools/producer_task_retrieve.yaml
+- tools/producer_tasks_retrieve_batch.yaml
+- tools/qwen_image.yaml
+- tools/qwen_image_task_retrieve.yaml
+- tools/qwen_image_tasks_retrieve_batch.yaml
+- tools/seedance_generate.yaml
+- tools/seedance_task_retrieve.yaml
+- tools/seedance_tasks_retrieve_batch.yaml
+- tools/seedream_generate.yaml
+- tools/seedream_edit.yaml
+- tools/seedream_decompose.yaml
+- tools/seedream_task_retrieve.yaml
+- tools/seedream_tasks_retrieve_batch.yaml
+- tools/suno_generate_audios.yaml
+- tools/suno_generate_lyrics.yaml
+- tools/suno_upload_reference_audio.yaml
+- tools/suno_get_mp4.yaml
+- tools/suno_get_mp3.yaml
+- tools/suno_get_wav.yaml
+- tools/suno_get_midi.yaml
+- tools/suno_get_timing.yaml
+- tools/suno_create_vox_audio.yaml
+- tools/suno_enhance_style.yaml
+- tools/suno_mashup_lyrics.yaml
+- tools/suno_create_voice.yaml
+- tools/suno_create_persona.yaml
+- tools/suno_list_personas.yaml
+- tools/suno_delete_persona.yaml
+- tools/suno_custom_models.yaml
+- tools/suno_projects.yaml
+- tools/suno_task_retrieve.yaml
+- tools/suno_tasks_retrieve_batch.yaml
+- tools/veo_generate.yaml
+- tools/veo_task_retrieve.yaml
+- tools/veo_tasks_retrieve_batch.yaml
+- tools/wan_generate.yaml
+- tools/wan3_generate.yaml
+- tools/wan_task_retrieve.yaml
+- tools/wan_tasks_retrieve_batch.yaml
+- tools/acemusic_generate.yaml
+- tools/acemusic_custom.yaml
+- tools/acemusic_upload.yaml
+- tools/acemusic_cover.yaml
+- tools/acemusic_mashup.yaml
+- tools/acemusic_lyrics.yaml
+- tools/acemusic_retrieve.yaml
+- tools/acemusic_batch.yaml
+- tools/acemusic_history.yaml
+extra:
+  python:
+    source: provider/ace_media.py

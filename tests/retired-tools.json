@@ -1,0 +1,74 @@
+[
+  {
+    "tool": "fish_create_voice",
+    "api_id": "8bcf2d24-9c68-4a44-989e-4601c0601217",
+    "path": "/fish/voices",
+    "service": "fish",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/8bcf2d24-9c68-4a44-989e-4601c0601217/"
+  },
+  {
+    "tool": "kling_virtual_try_on",
+    "api_id": "2a6262b2-aa0a-57b1-91ae-636b1a8322e6",
+    "path": "/kling/virtual-try-on",
+    "service": "kling",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/2a6262b2-aa0a-57b1-91ae-636b1a8322e6/"
+  },
+  {
+    "tool": "kling_apparel",
+    "api_id": "25004129-94a5-5084-ace2-48cfbf14aa95",
+    "path": "/kling/apparel",
+    "service": "kling",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/25004129-94a5-5084-ace2-48cfbf14aa95/"
+  },
+  {
+    "tool": "kling_voices",
+    "api_id": "94be993f-e70a-5499-a458-bb4853ccc292",
+    "path": "/kling/voices",
+    "service": "kling",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/94be993f-e70a-5499-a458-bb4853ccc292/"
+  },
+  {
+    "tool": "kling_elements",
+    "api_id": "bfc78ffd-b786-5325-8803-311d70fe8ddf",
+    "path": "/kling/elements",
+    "service": "kling",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/bfc78ffd-b786-5325-8803-311d70fe8ddf/"
+  },
+  {
+    "tool": "veo_extend_video",
+    "api_id": "65239a42-6b69-41bc-9b88-19c294af033a",
+    "path": "/veo/extend",
+    "service": "veo",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/65239a42-6b69-41bc-9b88-19c294af033a/"
+  },
+  {
+    "tool": "veo_edit_objects",
+    "api_id": "cb3cfd7a-494b-4e02-876c-c1fb996342f5",
+    "path": "/veo/objects",
+    "service": "veo",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/cb3cfd7a-494b-4e02-876c-c1fb996342f5/"
+  },
+  {
+    "tool": "veo_reshoot_video",
+    "api_id": "f0e5cf7b-2052-4ec3-9db3-9d61108b4e97",
+    "path": "/veo/reshoot",
+    "service": "veo",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/f0e5cf7b-2052-4ec3-9db3-9d61108b4e97/"
+  },
+  {
+    "tool": "veo_upsample_video",
+    "api_id": "f54de6db-db6d-4a01-8c24-dba1c1fab458",
+    "path": "/veo/upsample",
+    "service": "veo",
+    "stage": "Deprecated",
+    "source_url": "https://platform.acedata.cloud/api/v1/apis/f54de6db-db6d-4a01-8c24-dba1c1fab458/"
+  }
+]

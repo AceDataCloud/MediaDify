@@ -1,0 +1,67 @@
+identity:
+  name: acemusic_custom
+  author: acedatacloud
+  label:
+    en_US: Create song from lyrics
+    zh_Hans: 按歌词生成歌曲
+description:
+  human:
+    en_US: Submit one paid song generation with your own lyrics, style and title.
+    zh_Hans: 按歌词生成歌曲
+  llm: Submit one paid song generation with your own lyrics, style and title.
+parameters:
+- name: lyric
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Lyrics
+  human_description:
+    en_US: Lyrics
+  llm_description: Lyrics
+- name: style
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Musical style
+  human_description:
+    en_US: Musical style
+  llm_description: Musical style
+- name: title
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Title
+  human_description:
+    en_US: Title
+  llm_description: Title
+- name: model
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Model
+  human_description:
+    en_US: Model
+  llm_description: Model
+  options:
+  - value: acemusic-v1.1
+    label:
+      en_US: acemusic-v1.1
+      zh_Hans: acemusic-v1.1
+  - value: acemusic-v1
+    label:
+      en_US: acemusic-v1
+      zh_Hans: acemusic-v1
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_custom.py

@@ -1,0 +1,107 @@
+[
+  {
+    "repository": "https://github.com/AceDataCloud/WanDify",
+    "revision": "df6a5a0b7fc575f2c5305bda394686b66e6c8ca1",
+    "selected_files": 35
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/VeoDify",
+    "revision": "bba7352e46e66b3afd3b038d944003a26436743f",
+    "selected_files": 40
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/SeedreamDify",
+    "revision": "9a5ddbbfbee624fcdcaa634ef3a78c1152053ae8",
+    "selected_files": 37
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/QwenImageDify",
+    "revision": "3ad757bc7f5a5b752fda1ad01463e356b498459a",
+    "selected_files": 33
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/MiniMaxDify",
+    "revision": "fa92b45bf143126efea1ed50f3746ecf342a96c2",
+    "selected_files": 40
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/MidjourneyDify",
+    "revision": "b201468a2a0817f4c7fcb8db7af08fb96ae8569c",
+    "selected_files": 46
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/KlingDify",
+    "revision": "b651ddaba92bbe36d69c4159e117844e02ddad20",
+    "selected_files": 60
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/GrokDify",
+    "revision": "d0f1ff5c354b7c62cab2d8c58eabf84547f05315",
+    "selected_files": 36
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/GoogleSearchDify",
+    "revision": "e67e629bdff07e41a3e99f7ac0242bf12b756137",
+    "selected_files": 29
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/FluxDify",
+    "revision": "dfa8c79456c325f9486d88a0831b41cc40fe92e2",
+    "selected_files": 38
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/FishAudioDify",
+    "revision": "ff6c3cffa8741987abf62ba0c064cd14f610f241",
+    "selected_files": 42
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/FaceDify",
+    "revision": "6afa1cfbaa15bca0d25aee31eac8bf06c63769af",
+    "selected_files": 29
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/SunoDify",
+    "revision": "7dd7852d040de01701fcb41dc578ec168d8a09b0",
+    "selected_files": 72
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/SeedanceDify",
+    "revision": "55e1aac2bdd425691a12cd714a2b868c617e6fdb",
+    "selected_files": 33
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/ProducerDify",
+    "revision": "9e1a1e9c74052eb0d3abc01bbd2e93f9bd6e583b",
+    "selected_files": 36
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/NanoBananaDify",
+    "revision": "d237ae0ed72c8f395556a52687f489a2aab9d6fe",
+    "selected_files": 34
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/LumaDify",
+    "revision": "7b553ac79e68096b55985cf4a1a1817bf7987db3",
+    "selected_files": 29
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/HappyHorseDify",
+    "revision": "ca558875d62fdec6eba09a913043dfe3345cf58e",
+    "selected_files": 32
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/HailuoDify",
+    "revision": "7a4ac31aee26127a8f98be0004d3b20d1e872782",
+    "selected_files": 29
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/GPTImageDify",
+    "revision": "6916f7f1ee7fdb9531abf1c3ef1c57a34061eaf7",
+    "selected_files": 41
+  },
+  {
+    "repository": "https://github.com/AceDataCloud/ACEMusicDify",
+    "revision": "256c23a0d43926cf450e4c5a596cc71dbb987783",
+    "selected_files": 42
+  }
+]

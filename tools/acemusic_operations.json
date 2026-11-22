@@ -1,0 +1,211 @@
+{
+  "generate": {
+    "endpoint": "audios",
+    "body": {
+      "action": "generate",
+      "custom": false,
+      "async": true
+    },
+    "fields": {
+      "prompt": {
+        "key": "prompt",
+        "kind": "text",
+        "required": true
+      },
+      "model": {
+        "key": "model",
+        "kind": "model",
+        "required": false
+      }
+    }
+  },
+  "custom": {
+    "endpoint": "audios",
+    "body": {
+      "action": "generate",
+      "custom": true,
+      "async": true
+    },
+    "fields": {
+      "lyric": {
+        "key": "lyric",
+        "kind": "text",
+        "required": true
+      },
+      "style": {
+        "key": "style",
+        "kind": "text",
+        "required": true
+      },
+      "title": {
+        "key": "title",
+        "kind": "text",
+        "required": true
+      },
+      "model": {
+        "key": "model",
+        "kind": "model",
+        "required": false
+      }
+    }
+  },
+  "upload": {
+    "endpoint": "audios",
+    "body": {
+      "action": "upload",
+      "async": true
+    },
+    "fields": {
+      "audio_url": {
+        "key": "audio_url",
+        "kind": "url",
+        "required": true
+      },
+      "name": {
+        "key": "name",
+        "kind": "text",
+        "required": false
+      },
+      "audio_id": {
+        "key": "audio_id",
+        "kind": "text",
+        "required": false
+      }
+    }
+  },
+  "cover": {
+    "endpoint": "audios",
+    "body": {
+      "action": "cover",
+      "model": "acemusic-v1.1",
+      "async": true
+    },
+    "fields": {
+      "audio_id": {
+        "key": "audio_id",
+        "kind": "text",
+        "required": true
+      },
+      "lyric": {
+        "key": "lyric",
+        "kind": "text",
+        "required": true
+      },
+      "style": {
+        "key": "style",
+        "kind": "text",
+        "required": true
+      },
+      "title": {
+        "key": "title",
+        "kind": "text",
+        "required": false
+      },
+      "audio_influence": {
+        "key": "audio_influence",
+        "kind": "strength",
+        "required": false
+      }
+    }
+  },
+  "mashup": {
+    "endpoint": "audios",
+    "body": {
+      "action": "mashup",
+      "model": "acemusic-v1.1",
+      "async": true
+    },
+    "fields": {
+      "first_audio_id": {
+        "key": "first_audio_id",
+        "kind": "text",
+        "required": true
+      },
+      "second_audio_id": {
+        "key": "second_audio_id",
+        "kind": "text",
+        "required": true
+      },
+      "lyric": {
+        "key": "lyric",
+        "kind": "text",
+        "required": true
+      },
+      "style": {
+        "key": "style",
+        "kind": "text",
+        "required": true
+      },
+      "title": {
+        "key": "title",
+        "kind": "text",
+        "required": false
+      },
+      "audio_influence": {
+        "key": "audio_influence",
+        "kind": "strength",
+        "required": false
+      }
+    }
+  },
+  "lyrics": {
+    "endpoint": "lyrics",
+    "body": {},
+    "fields": {
+      "prompt": {
+        "key": "prompt",
+        "kind": "text",
+        "required": true
+      },
+      "style": {
+        "key": "style",
+        "kind": "text",
+        "required": false
+      }
+    }
+  },
+  "retrieve": {
+    "endpoint": "tasks",
+    "body": {
+      "action": "retrieve"
+    },
+    "fields": {
+      "task_id": {
+        "key": "id",
+        "kind": "text",
+        "required": true
+      }
+    }
+  },
+  "batch": {
+    "endpoint": "tasks",
+    "body": {
+      "action": "retrieve_batch"
+    },
+    "fields": {
+      "task_ids": {
+        "key": "ids",
+        "kind": "ids",
+        "required": true
+      }
+    }
+  },
+  "history": {
+    "endpoint": "tasks",
+    "body": {
+      "action": "list"
+    },
+    "fields": {
+      "page": {
+        "key": "page",
+        "kind": "page",
+        "required": false
+      },
+      "page_size": {
+        "key": "page_size",
+        "kind": "size",
+        "required": false
+      }
+    }
+  }
+}

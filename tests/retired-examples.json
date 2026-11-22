@@ -1,0 +1,186 @@
+[
+  {
+    "name": "fish_create_voice-2",
+    "tool": "fish_create_voice",
+    "inputs": {
+      "voice_url": "https://example.org/reference.mp3",
+      "title": "Owned voice"
+    },
+    "method": "POST",
+    "path": "/fish/voices",
+    "body": {
+      "voice_url": "https://example.org/reference.mp3"
+    },
+    "source_repository": "FishAudioDify"
+  },
+  {
+    "name": "kling_voices-5",
+    "tool": "kling_voices",
+    "inputs": {
+      "action": "list"
+    },
+    "method": "POST",
+    "path": "/kling/voices",
+    "body": {
+      "action": "list"
+    },
+    "read_only": true,
+    "absent": [
+      "async"
+    ],
+    "async": false,
+    "source_repository": "KlingDify"
+  },
+  {
+    "name": "kling_voices-6",
+    "tool": "kling_voices",
+    "inputs": {
+      "action": "delete",
+      "id": "owned-item"
+    },
+    "method": "POST",
+    "path": "/kling/voices",
+    "body": {},
+    "error": true,
+    "source_repository": "KlingDify"
+  },
+  {
+    "name": "kling_elements-7",
+    "tool": "kling_elements",
+    "inputs": {
+      "action": "list"
+    },
+    "method": "POST",
+    "path": "/kling/elements",
+    "body": {
+      "action": "list"
+    },
+    "read_only": true,
+    "absent": [
+      "async"
+    ],
+    "async": false,
+    "source_repository": "KlingDify"
+  },
+  {
+    "name": "kling_elements-8",
+    "tool": "kling_elements",
+    "inputs": {
+      "action": "delete",
+      "id": "owned-item"
+    },
+    "method": "POST",
+    "path": "/kling/elements",
+    "body": {},
+    "error": true,
+    "source_repository": "KlingDify"
+  },
+  {
+    "name": "kling_virtual_try_on-11",
+    "tool": "kling_virtual_try_on",
+    "inputs": {
+      "contents": "[{\"type\": \"person_image\", \"url\": \"https://example.org/person.png\"}, {\"type\": \"product_image\", \"url\": \"https://example.org/product.png\"}]",
+      "settings": "{}"
+    },
+    "method": "POST",
+    "path": "/kling/virtual-try-on",
+    "body": {
+      "contents": [
+        {
+          "type": "person_image",
+          "url": "https://example.org/person.png"
+        },
+        {
+          "type": "product_image",
+          "url": "https://example.org/product.png"
+        }
+      ],
+      "settings": {}
+    },
+    "source_repository": "KlingDify"
+  },
+  {
+    "name": "kling_apparel-12",
+    "tool": "kling_apparel",
+    "inputs": {
+      "contents": "[{\"type\": \"product_info\", \"text\": \"Test\"}, {\"type\": \"product_image\", \"url\": \"https://example.org/product.png\"}]",
+      "settings": "{\"aspect_ratio\": \"16:9\"}"
+    },
+    "method": "POST",
+    "path": "/kling/apparel",
+    "body": {
+      "contents": [
+        {
+          "type": "product_info",
+          "text": "Test"
+        },
+        {
+          "type": "product_image",
+          "url": "https://example.org/product.png"
+        }
+      ],
+      "settings": {
+        "aspect_ratio": "16:9"
+      }
+    },
+    "source_repository": "KlingDify"
+  },
+  {
+    "name": "veo_extend_video-2",
+    "tool": "veo_extend_video",
+    "inputs": {
+      "model": "veo31-fast",
+      "video_id": "owned-video",
+      "prompt": "Continue"
+    },
+    "method": "POST",
+    "path": "/veo/extend",
+    "body": {
+      "video_id": "owned-video"
+    },
+    "source_repository": "VeoDify"
+  },
+  {
+    "name": "veo_edit_objects-3",
+    "tool": "veo_edit_objects",
+    "inputs": {
+      "action": "remove",
+      "video_id": "owned-video",
+      "prompt": "Remove ball"
+    },
+    "method": "POST",
+    "path": "/veo/objects",
+    "body": {
+      "action": "remove"
+    },
+    "source_repository": "VeoDify"
+  },
+  {
+    "name": "veo_reshoot_video-4",
+    "tool": "veo_reshoot_video",
+    "inputs": {
+      "motion_type": "STATIONARY",
+      "video_id": "owned-video"
+    },
+    "method": "POST",
+    "path": "/veo/reshoot",
+    "body": {
+      "motion_type": "STATIONARY"
+    },
+    "source_repository": "VeoDify"
+  },
+  {
+    "name": "veo_upsample_video-5",
+    "tool": "veo_upsample_video",
+    "inputs": {
+      "action": "1080p",
+      "video_id": "owned-video"
+    },
+    "method": "POST",
+    "path": "/veo/upsample",
+    "body": {
+      "action": "1080p"
+    },
+    "source_repository": "VeoDify"
+  }
+]

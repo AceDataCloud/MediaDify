@@ -1,0 +1,414 @@
+{
+  "face:liveness": {
+    "api_id": "96006810-b5b7-4585-90eb-90c2ca127b67",
+    "path": "/face/detect-live",
+    "options": {
+      "face_model_version": [
+        "3.0"
+      ]
+    }
+  },
+  "flux_generate_image": {
+    "api_id": "deefc5d7-7f22-43e9-929e-f2b6afee60b7",
+    "path": "/flux/images",
+    "options": {
+      "model": [
+        "flux-dev",
+        "flux-pro",
+        "flux-kontext-pro",
+        "flux-kontext-max",
+        "flux-2-flex",
+        "flux-2-pro",
+        "flux-2-max",
+        "flux-2-klein"
+      ]
+    }
+  },
+  "flux_edit_image": {
+    "api_id": "deefc5d7-7f22-43e9-929e-f2b6afee60b7",
+    "path": "/flux/images",
+    "options": {
+      "model": [
+        "flux-dev",
+        "flux-pro",
+        "flux-kontext-pro",
+        "flux-kontext-max",
+        "flux-2-flex",
+        "flux-2-pro",
+        "flux-2-max",
+        "flux-2-klein"
+      ]
+    }
+  },
+  "gpt_image_generate_image": {
+    "api_id": "8f01fe72-8a3e-4872-8d8d-330cde179b3a",
+    "path": "/openai/images/generations",
+    "options": {
+      "model": [
+        "dall-e-2",
+        "dall-e-3",
+        "gpt-image-1",
+        "gpt-image-1.5",
+        "gpt-image-2",
+        "gpt-image-2.5-flare",
+        "gpt-image-2.5-flare:reverse",
+        "gpt-image-2.5-flare:official",
+        "gpt-image-2.5-sunburst",
+        "gpt-image-2.5-sunburst:reverse",
+        "gpt-image-2.5-sunburst:official",
+        "gpt-image-2:reverse",
+        "gpt-image-2:official",
+        "nano-banana",
+        "nano-banana-2-lite",
+        "nano-banana-2",
+        "nano-banana-2.1",
+        "nano-banana-pro",
+        "gpt-image-2.6-flare",
+        "gpt-image-2.6-flare:reverse",
+        "gpt-image-2.6-flare:official",
+        "gpt-image-2.6-sunburst",
+        "gpt-image-2.6-sunburst:reverse",
+        "gpt-image-2.6-sunburst:official"
+      ]
+    }
+  },
+  "gpt_image_edit_image": {
+    "api_id": "fb74083e-bb68-48d5-8ba6-b5a224400cd3",
+    "path": "/openai/images/edits",
+    "options": {
+      "model": [
+        "dall-e-2",
+        "dall-e-3",
+        "gpt-image-1",
+        "gpt-image-1.5",
+        "gpt-image-2",
+        "gpt-image-2.5-flare",
+        "gpt-image-2.5-flare:reverse",
+        "gpt-image-2.5-flare:official",
+        "gpt-image-2.5-sunburst",
+        "gpt-image-2.5-sunburst:reverse",
+        "gpt-image-2.5-sunburst:official",
+        "gpt-image-2:reverse",
+        "gpt-image-2:official",
+        "nano-banana",
+        "nano-banana-2-lite",
+        "nano-banana-2",
+        "nano-banana-2.1",
+        "nano-banana-pro",
+        "gpt-image-2.6-flare",
+        "gpt-image-2.6-flare:reverse",
+        "gpt-image-2.6-flare:official",
+        "gpt-image-2.6-sunburst",
+        "gpt-image-2.6-sunburst:reverse",
+        "gpt-image-2.6-sunburst:official"
+      ]
+    }
+  },
+  "grok_generate_video": {
+    "api_id": "c1c460c7-adc7-42c2-b7b0-d4bdfaa66222",
+    "path": "/grok/videos",
+    "options": {
+      "model": [
+        "grok-imagine-video-1.5-fast:reverse",
+        "grok-imagine-video:reverse",
+        "grok-imagine-video:official",
+        "grok-imagine-video-1.5:official",
+        "grok-imagine-video"
+      ]
+    }
+  },
+  "grok_chat_completions": {
+    "api_id": "aff80c74-b190-445b-9124-6422ed763c50",
+    "path": "/grok/chat/completions",
+    "options": {
+      "model": [
+        "grok-4.7",
+        "grok-4.5",
+        "grok-4",
+        "grok-3"
+      ]
+    }
+  },
+  "hailuo_generate_video": {
+    "api_id": "d5af91f6-a7ec-4015-b0a5-d25051158470",
+    "path": "/hailuo/videos",
+    "options": {
+      "model": [
+        "minimax-i2v",
+        "minimax-t2v",
+        "minimax-i2v-director"
+      ]
+    }
+  },
+  "happyhorse_generate_video": {
+    "api_id": "d656e357-50cb-4390-b8c9-67464bc2a2f2",
+    "path": "/happyhorse/videos",
+    "options": {
+      "model": [
+        "happyhorse-1.0-t2v",
+        "happyhorse-1.1-t2v",
+        "happyhorse-1.0-i2v",
+        "happyhorse-1.1-i2v",
+        "happyhorse-1.0-r2v",
+        "happyhorse-1.1-r2v",
+        "happyhorse-1.0-video-edit"
+      ]
+    }
+  },
+  "kling_generate_video": {
+    "api_id": "29187cb2-1acb-43b8-baf5-3f3f709292eb",
+    "path": "/kling/videos",
+    "options": {
+      "model": [
+        "kling-v3-turbo",
+        "kling-v1",
+        "kling-v1-6",
+        "kling-v2-master",
+        "kling-v2-1-master",
+        "kling-v2-5-turbo",
+        "kling-v2-6",
+        "kling-v3",
+        "kling-v3-omni",
+        "kling-o1"
+      ]
+    }
+  },
+  "kling_generate_motion": {
+    "api_id": "2c26cb33-46ac-4bd7-82f9-0ec63e688172",
+    "path": "/kling/motion",
+    "options": {
+      "model_name": [
+        "kling-v2-6",
+        "kling-v3"
+      ]
+    }
+  },
+  "kling_talking_photo": {
+    "api_id": "1daf8204-7306-4c54-8014-a00c5996cbfe",
+    "path": "/kling/talking-photo",
+    "options": {
+      "model": [
+        "kling-v1",
+        "kling-v1-6",
+        "kling-v2-master",
+        "kling-v2-1-master",
+        "kling-v2-5-turbo",
+        "kling-v2-6"
+      ]
+    }
+  },
+  "midjourney_imagine": {
+    "api_id": "62ec82bd-7de3-427f-b71a-ab3551ac7677",
+    "path": "/midjourney/imagine",
+    "options": {
+      "version": [
+        "8.2",
+        "8.1",
+        "8",
+        "7",
+        "6.1",
+        "6",
+        "5.2"
+      ]
+    }
+  },
+  "minimax_generate_video": {
+    "api_id": "64f22fd9-0efd-445e-b0b1-135682fd66d7",
+    "path": "/minimax/videos",
+    "options": {
+      "model": [
+        "MiniMax-H3"
+      ]
+    }
+  },
+  "nano_banana_generate_image": {
+    "api_id": "9d8a117e-31ca-4322-a0fd-1771296ec610",
+    "path": "/nano-banana/images",
+    "options": {
+      "model": [
+        "nano-banana",
+        "nano-banana-2-lite",
+        "nano-banana-2",
+        "nano-banana-2.1",
+        "nano-banana-pro",
+        "nano-banana:official",
+        "nano-banana-2-lite:official",
+        "nano-banana-2:official",
+        "nano-banana-pro:official"
+      ]
+    }
+  },
+  "nano_banana_edit_image": {
+    "api_id": "9d8a117e-31ca-4322-a0fd-1771296ec610",
+    "path": "/nano-banana/images",
+    "options": {
+      "model": [
+        "nano-banana",
+        "nano-banana-2-lite",
+        "nano-banana-2",
+        "nano-banana-2.1",
+        "nano-banana-pro",
+        "nano-banana:official",
+        "nano-banana-2-lite:official",
+        "nano-banana-2:official",
+        "nano-banana-pro:official"
+      ]
+    }
+  },
+  "producer_generate_audios": {
+    "api_id": "01d96900-9f8c-41d7-814c-95c7a885ba61",
+    "path": "/producer/audios",
+    "options": {
+      "model": [
+        "FUZZ-2.0 Pro",
+        "FUZZ-2.0",
+        "FUZZ-2.0 Raw",
+        "FUZZ-1.1 Pro",
+        "FUZZ-1.0 Pro",
+        "FUZZ-1.0",
+        "FUZZ-1.1",
+        "FUZZ-0.8"
+      ]
+    }
+  },
+  "qwen_image": {
+    "api_id": "d0b8a0b6-9471-4c53-aad2-290e68b2ebdb",
+    "path": "/qwen-image/images",
+    "options": {
+      "model": [
+        "qwen-image-3.0",
+        "qwen-image-3.0-pro"
+      ]
+    }
+  },
+  "seedance_generate_video": {
+    "api_id": "0083b874-4da6-40df-87e3-835b1300c1e8",
+    "path": "/seedance/videos",
+    "options": {
+      "model": [
+        "doubao-seedance-1-0-pro-250528",
+        "doubao-seedance-1-0-pro-fast-251015",
+        "doubao-seedance-1-5-pro-251215",
+        "doubao-seedance-1-0-lite-t2v-250428",
+        "doubao-seedance-1-0-lite-i2v-250428",
+        "doubao-seedance-2-0-260128",
+        "doubao-seedance-2-0-fast-260128",
+        "doubao-seedance-2-0-mini-260615",
+        "doubao-seedance-2-5-260628"
+      ]
+    }
+  },
+  "seedream_generate_image": {
+    "api_id": "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e",
+    "path": "/seedream/images",
+    "options": {
+      "model": [
+        "doubao-seedream-5-0-pro-260628",
+        "doubao-seedream-5-0-lite-260128",
+        "doubao-seedream-4-0-250828",
+        "doubao-seedream-4-5-251128"
+      ]
+    }
+  },
+  "seedream_edit_image": {
+    "api_id": "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e",
+    "path": "/seedream/images",
+    "options": {
+      "model": [
+        "doubao-seedream-5-0-pro-260628",
+        "doubao-seedream-5-0-lite-260128",
+        "doubao-seedream-4-0-250828",
+        "doubao-seedream-4-5-251128"
+      ]
+    }
+  },
+  "seedream_decompose_image": {
+    "api_id": "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e",
+    "path": "/seedream/images",
+    "options": {
+      "model": [
+        "doubao-seedream-5-0-pro-260628",
+        "doubao-seedream-5-0-lite-260128",
+        "doubao-seedream-4-0-250828",
+        "doubao-seedream-4-5-251128"
+      ]
+    }
+  },
+  "suno_generate_audios": {
+    "api_id": "09a26295-5972-4392-9318-dcd9b218f90d",
+    "path": "/suno/audios",
+    "options": {
+      "model": [
+        "chirp-v6",
+        "chirp-v6-wild",
+        "chirp-v6-mini",
+        "chirp-v5-5",
+        "chirp-v5",
+        "chirp-v4-5-plus",
+        "chirp-v4-5",
+        "chirp-v4",
+        "chirp-v3-5",
+        "chirp-v3-0"
+      ]
+    }
+  },
+  "suno_generate_lyrics": {
+    "api_id": "c98fe4e5-73c0-462d-ad24-5080ee1fa01a",
+    "path": "/suno/lyrics",
+    "options": {
+      "model": [
+        "default",
+        "remi-v1"
+      ]
+    }
+  },
+  "veo_generate_video": {
+    "api_id": "52a0fa83-3c78-4793-b45a-c1a5c869ae46",
+    "path": "/veo/videos",
+    "options": {
+      "model": [
+        "veo3",
+        "veo3-fast",
+        "veo31-fast",
+        "veo31",
+        "veo31-fast-ingredients"
+      ]
+    }
+  },
+  "wan_generate_video": {
+    "api_id": "6a4ecdbf-b219-4505-8277-5ec4b1ac14f8",
+    "path": "/wan/videos",
+    "options": {
+      "model": [
+        "wan2.6-i2v",
+        "wan2.6-r2v",
+        "wan2.6-i2v-flash",
+        "wan2.6-t2v",
+        "wan3.0-video"
+      ]
+    }
+  },
+  "wan3_generate": {
+    "api_id": "6a4ecdbf-b219-4505-8277-5ec4b1ac14f8",
+    "path": "/wan/videos",
+    "options": {
+      "model": [
+        "wan2.6-i2v",
+        "wan2.6-r2v",
+        "wan2.6-i2v-flash",
+        "wan2.6-t2v",
+        "wan3.0-video"
+      ]
+    }
+  },
+  "acemusic": {
+    "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f",
+    "path": "/acemusic/audios",
+    "options": {
+      "model": [
+        "acemusic-v1.1",
+        "acemusic-v1"
+      ]
+    }
+  }
+}

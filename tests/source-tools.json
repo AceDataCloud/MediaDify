@@ -1,0 +1,289 @@
+[
+  {
+    "service": "face",
+    "repository": "https://github.com/AceDataCloud/FaceDify",
+    "tool_names": [
+      "face_transform"
+    ],
+    "old_plugin_id": "acedatacloud/face",
+    "task_path": null
+  },
+  {
+    "service": "fish",
+    "repository": "https://github.com/AceDataCloud/FishAudioDify",
+    "tool_names": [
+      "fish_generate_audio",
+      "fish_search_voices",
+      "fish_get_voice",
+      "fish_create_model",
+      "fish_create_voice",
+      "fish_task_retrieve",
+      "fish_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/fish",
+    "task_path": "/fish/tasks"
+  },
+  {
+    "service": "flux",
+    "repository": "https://github.com/AceDataCloud/FluxDify",
+    "tool_names": [
+      "flux_generate_image",
+      "flux_edit_image",
+      "flux_generate_video",
+      "flux_task_retrieve",
+      "flux_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/flux",
+    "task_path": "/flux/tasks"
+  },
+  {
+    "service": "gpt_image",
+    "repository": "https://github.com/AceDataCloud/GPTImageDify",
+    "tool_names": [
+      "gpt_image_generate_image",
+      "gpt_image_edit_image",
+      "gpt_image_list_tasks",
+      "gpt_image_task_retrieve",
+      "gpt_image_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/gpt_image",
+    "task_path": "/openai/tasks"
+  },
+  {
+    "service": "serp",
+    "repository": "https://github.com/AceDataCloud/GoogleSearchDify",
+    "tool_names": [
+      "serp_google"
+    ],
+    "old_plugin_id": "acedatacloud/serp",
+    "task_path": null
+  },
+  {
+    "service": "grok",
+    "repository": "https://github.com/AceDataCloud/GrokDify",
+    "tool_names": [
+      "grok_generate_video",
+      "grok_chat_completions",
+      "grok_task_retrieve",
+      "grok_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/grok",
+    "task_path": "/grok/tasks"
+  },
+  {
+    "service": "hailuo",
+    "repository": "https://github.com/AceDataCloud/HailuoDify",
+    "tool_names": [
+      "hailuo_generate_video",
+      "hailuo_task_retrieve",
+      "hailuo_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/hailuo",
+    "task_path": "/hailuo/tasks"
+  },
+  {
+    "service": "happyhorse",
+    "repository": "https://github.com/AceDataCloud/HappyHorseDify",
+    "tool_names": [
+      "happyhorse_generate_video",
+      "happyhorse_task_retrieve",
+      "happyhorse_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/happyhorse",
+    "task_path": "/happyhorse/tasks"
+  },
+  {
+    "service": "kling",
+    "repository": "https://github.com/AceDataCloud/KlingDify",
+    "tool_names": [
+      "kling_generate_video",
+      "kling_generate_motion",
+      "kling_lip_sync",
+      "kling_talking_photo",
+      "kling_goods_studio",
+      "kling_video_commerce",
+      "kling_virtual_try_on",
+      "kling_apparel",
+      "kling_voices",
+      "kling_elements",
+      "kling_task_retrieve",
+      "kling_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/kling",
+    "task_path": "/kling/tasks"
+  },
+  {
+    "service": "luma",
+    "repository": "https://github.com/AceDataCloud/LumaDify",
+    "tool_names": [
+      "luma_generate_video",
+      "luma_task_retrieve",
+      "luma_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/luma",
+    "task_path": "/luma/tasks"
+  },
+  {
+    "service": "midjourney",
+    "repository": "https://github.com/AceDataCloud/MidjourneyDify",
+    "tool_names": [
+      "midjourney_imagine",
+      "midjourney_edits",
+      "midjourney_describe",
+      "midjourney_translate",
+      "midjourney_videos",
+      "midjourney_get_seed",
+      "midjourney_shorten",
+      "midjourney_task_retrieve",
+      "midjourney_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/midjourney",
+    "task_path": "/midjourney/tasks"
+  },
+  {
+    "service": "minimax",
+    "repository": "https://github.com/AceDataCloud/MiniMaxDify",
+    "tool_names": [
+      "minimax_generate_video",
+      "minimax_list_tasks",
+      "minimax_delete_task",
+      "minimax_task_retrieve",
+      "minimax_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/minimax",
+    "task_path": "/minimax/tasks"
+  },
+  {
+    "service": "nano_banana",
+    "repository": "https://github.com/AceDataCloud/NanoBananaDify",
+    "tool_names": [
+      "nano_banana_generate_image",
+      "nano_banana_edit_image",
+      "nano_banana_task_retrieve",
+      "nano_banana_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/nano-banana",
+    "task_path": "/nano-banana/tasks"
+  },
+  {
+    "service": "producer",
+    "repository": "https://github.com/AceDataCloud/ProducerDify",
+    "tool_names": [
+      "producer_generate_audios",
+      "producer_generate_lyrics",
+      "producer_upload_reference_audio",
+      "producer_get_video",
+      "producer_get_wav",
+      "producer_task_retrieve",
+      "producer_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/producer",
+    "task_path": "/producer/tasks"
+  },
+  {
+    "service": "qwen_image",
+    "repository": "https://github.com/AceDataCloud/QwenImageDify",
+    "tool_names": [
+      "qwen_image",
+      "qwen_image_task_retrieve",
+      "qwen_image_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/qwen-image",
+    "task_path": "/qwen-image/tasks"
+  },
+  {
+    "service": "seedance",
+    "repository": "https://github.com/AceDataCloud/SeedanceDify",
+    "tool_names": [
+      "seedance_generate_video",
+      "seedance_task_retrieve",
+      "seedance_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/seedance",
+    "task_path": "/seedance/tasks"
+  },
+  {
+    "service": "seedream",
+    "repository": "https://github.com/AceDataCloud/SeedreamDify",
+    "tool_names": [
+      "seedream_generate_image",
+      "seedream_edit_image",
+      "seedream_decompose_image",
+      "seedream_task_retrieve",
+      "seedream_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/seedream",
+    "task_path": "/seedream/tasks"
+  },
+  {
+    "service": "suno",
+    "repository": "https://github.com/AceDataCloud/SunoDify",
+    "tool_names": [
+      "suno_generate_audios",
+      "suno_generate_lyrics",
+      "suno_upload_reference_audio",
+      "suno_get_mp4",
+      "suno_get_mp3",
+      "suno_get_wav",
+      "suno_get_midi",
+      "suno_get_timing",
+      "suno_create_vox_audio",
+      "suno_enhance_style",
+      "suno_mashup_lyrics",
+      "suno_create_voice",
+      "suno_create_persona",
+      "suno_list_personas",
+      "suno_delete_persona",
+      "suno_custom_models",
+      "suno_projects",
+      "suno_task_retrieve",
+      "suno_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/suno",
+    "task_path": "/suno/tasks"
+  },
+  {
+    "service": "veo",
+    "repository": "https://github.com/AceDataCloud/VeoDify",
+    "tool_names": [
+      "veo_generate_video",
+      "veo_extend_video",
+      "veo_edit_objects",
+      "veo_reshoot_video",
+      "veo_upsample_video",
+      "veo_task_retrieve",
+      "veo_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/veo",
+    "task_path": "/veo/tasks"
+  },
+  {
+    "service": "wan",
+    "repository": "https://github.com/AceDataCloud/WanDify",
+    "tool_names": [
+      "wan_generate_video",
+      "wan3_generate",
+      "wan_task_retrieve",
+      "wan_tasks_retrieve_batch"
+    ],
+    "old_plugin_id": "acedatacloud/wan",
+    "task_path": "/wan/tasks"
+  },
+  {
+    "service": "acemusic",
+    "repository": "https://github.com/AceDataCloud/ACEMusicDify",
+    "tool_names": [
+      "acemusic_generate",
+      "acemusic_custom",
+      "acemusic_upload",
+      "acemusic_cover",
+      "acemusic_mashup",
+      "acemusic_lyrics",
+      "acemusic_retrieve",
+      "acemusic_batch",
+      "acemusic_history"
+    ],
+    "old_plugin_id": "acedatacloud/acemusic",
+    "task_path": "/acemusic/tasks"
+  }
+]

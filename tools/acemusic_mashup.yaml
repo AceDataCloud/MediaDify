@@ -1,0 +1,77 @@
+identity:
+  name: acemusic_mashup
+  author: acedatacloud
+  label:
+    en_US: Blend two tracks
+    zh_Hans: 融合两首音轨
+description:
+  human:
+    en_US: Submit one paid mashup with two distinct, compatible caller-owned track
+      IDs.
+    zh_Hans: 融合两首音轨
+  llm: Submit one paid mashup with two distinct, compatible caller-owned track IDs.
+parameters:
+- name: first_audio_id
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: First owned track ID
+  human_description:
+    en_US: First owned track ID
+  llm_description: First owned track ID
+- name: second_audio_id
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Second owned track ID
+  human_description:
+    en_US: Second owned track ID
+  llm_description: Second owned track ID
+- name: lyric
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Lyrics
+  human_description:
+    en_US: Lyrics
+  llm_description: Lyrics
+- name: style
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Musical style
+  human_description:
+    en_US: Musical style
+  llm_description: Musical style
+- name: title
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Title
+  human_description:
+    en_US: Title
+  llm_description: Title
+- name: audio_influence
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Audio influence (1–100)
+  human_description:
+    en_US: Audio influence (1–100)
+  llm_description: Audio influence (1–100)
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_mashup.py

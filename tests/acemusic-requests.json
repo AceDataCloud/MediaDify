@@ -1,0 +1,141 @@
+{
+  "generate": [
+    {
+      "prompt": "Spring"
+    },
+    [
+      "audios",
+      {
+        "action": "generate",
+        "custom": false,
+        "async": true,
+        "prompt": "Spring"
+      }
+    ]
+  ],
+  "custom": [
+    {
+      "title": "Home",
+      "lyric": "Verse",
+      "style": "Folk"
+    },
+    [
+      "audios",
+      {
+        "action": "generate",
+        "custom": true,
+        "async": true,
+        "title": "Home",
+        "lyric": "Verse",
+        "style": "Folk"
+      }
+    ]
+  ],
+  "upload": [
+    {
+      "audio_url": "https://example.com/song.mp3"
+    },
+    [
+      "audios",
+      {
+        "action": "upload",
+        "async": true,
+        "audio_url": "https://example.com/song.mp3"
+      }
+    ]
+  ],
+  "cover": [
+    {
+      "audio_id": "a",
+      "lyric": "Verse",
+      "style": "Folk"
+    },
+    [
+      "audios",
+      {
+        "action": "cover",
+        "model": "acemusic-v1.1",
+        "async": true,
+        "audio_id": "a",
+        "lyric": "Verse",
+        "style": "Folk"
+      }
+    ]
+  ],
+  "mashup": [
+    {
+      "first_audio_id": "a",
+      "second_audio_id": "b",
+      "lyric": "Verse",
+      "style": "Folk",
+      "audio_influence": 50
+    },
+    [
+      "audios",
+      {
+        "action": "mashup",
+        "model": "acemusic-v1.1",
+        "async": true,
+        "mashup_audio_ids": [
+          "a",
+          "b"
+        ],
+        "lyric": "Verse",
+        "style": "Folk",
+        "audio_influence": 50
+      }
+    ]
+  ],
+  "lyrics": [
+    {
+      "prompt": "Home"
+    },
+    [
+      "lyrics",
+      {
+        "prompt": "Home"
+      }
+    ]
+  ],
+  "retrieve": [
+    {
+      "task_id": "known"
+    },
+    [
+      "tasks",
+      {
+        "action": "retrieve",
+        "id": "known"
+      }
+    ]
+  ],
+  "batch": [
+    {
+      "task_ids": "a\nb"
+    },
+    [
+      "tasks",
+      {
+        "action": "retrieve_batch",
+        "ids": [
+          "a",
+          "b"
+        ]
+      }
+    ]
+  ],
+  "history": [
+    {
+      "page": 2,
+      "page_size": 10
+    },
+    [
+      "tasks",
+      {
+        "action": "list",
+        "page": 2,
+        "page_size": 10
+      }
+    ]
+  ]
+}

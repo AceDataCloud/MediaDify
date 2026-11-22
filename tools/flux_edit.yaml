@@ -1,0 +1,139 @@
+identity:
+  name: flux_edit_image
+  author: acedatacloud
+  label:
+    en_US: Flux Edit Image
+    zh_Hans: Flux 编辑图片
+description:
+  human:
+    en_US: Edit an image with Ace Data Cloud Flux Images Generation API.
+    zh_Hans: 通过 Ace Data Cloud Flux Images Generation API 编辑图片。
+  llm: Edit an image with Ace Data Cloud Flux Images Generation API. For asynchronous
+    results, preserve task_id and use the task retrieval tool until completion. A
+    successful submission is not completed output.
+parameters:
+- name: size
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Size
+    zh_Hans: 尺寸
+  human_description:
+    en_US: Optional output size (e.g., 1024x1024).
+    zh_Hans: 生成图像的尺寸规格。
+  llm_description: Optional output size (e.g., 1024x1024).
+  default: '1:1'
+- name: count
+  type: number
+  required: false
+  form: form
+  label:
+    en_US: Count
+    zh_Hans: 图片数量
+  human_description:
+    en_US: Set count.
+    zh_Hans: 生成图像的数量。
+  llm_description: Set count.
+  default: 1
+- name: model
+  type: select
+  required: false
+  form: form
+  label:
+    en_US: Model
+    zh_Hans: 模型
+  human_description:
+    en_US: Select a model currently supported by this API. Availability and pricing
+      depend on the chosen model.
+    zh_Hans: 用于生成图像的模型。
+  llm_description: Select a model currently supported by this API. Availability and
+    pricing depend on the chosen model.
+  default: flux-kontext-pro
+  options:
+  - value: flux-dev
+    label:
+      en_US: flux-dev
+      zh_Hans: flux-dev
+  - value: flux-pro
+    label:
+      en_US: flux-pro
+      zh_Hans: flux-pro
+  - value: flux-kontext-pro
+    label:
+      en_US: flux-kontext-pro
+      zh_Hans: flux-kontext-pro
+  - value: flux-kontext-max
+    label:
+      en_US: flux-kontext-max
+      zh_Hans: flux-kontext-max
+  - value: flux-2-flex
+    label:
+      en_US: flux-2-flex
+      zh_Hans: flux-2-flex
+  - value: flux-2-pro
+    label:
+      en_US: flux-2-pro
+      zh_Hans: flux-2-pro
+  - value: flux-2-max
+    label:
+      en_US: flux-2-max
+      zh_Hans: flux-2-max
+  - value: flux-2-klein
+    label:
+      en_US: flux-2-klein
+      zh_Hans: flux-2-klein
+- name: prompt
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Prompt
+    zh_Hans: 提示词
+  human_description:
+    en_US: Text prompt describing how to edit the image.
+    zh_Hans: 用于生成图像的提示词。
+  llm_description: Text prompt describing how to edit the image.
+- name: image_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Image URL
+    zh_Hans: 图片链接
+  human_description:
+    en_US: Public URL of the image to edit.
+    zh_Hans: 需要进行编辑的原始图像链接。
+  llm_description: Public URL of the image to edit.
+- name: callback_url
+  type: string
+  required: false
+  form: form
+  label:
+    en_US: Callback Url
+    zh_Hans: 回调 URL
+  human_description:
+    en_US: Set callback url for this operation.
+    zh_Hans: 图像生成完成后将被调用的回调地址。
+  llm_description: Set callback url for this operation.
+output_schema:
+  type: object
+  properties:
+    status:
+      type: string
+    success:
+      type: boolean
+    task_id:
+      type: string
+    trace_id:
+      type: string
+    media_urls:
+      type: array
+      items:
+        type: string
+    data: {}
+    result:
+      type: object
+extra:
+  python:
+    source: tools/flux_edit.py

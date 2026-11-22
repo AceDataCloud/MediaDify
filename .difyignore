@@ -1,0 +1,16 @@
+.git
+.gitignore
+.difyignore
+.github
+.env*
+.venv
+__pycache__
+.pytest_cache
+.ruff_cache
+.DS_Store
+*.pyc
+*.difypkg
+*.log
+tests
+scripts
+pyproject.toml
