@@ -32,11 +32,25 @@ def model_options(api, path):
     operation = paths[path].get("post", paths[path].get("get", {}))
     content = operation.get("requestBody", {}).get("content", {})
     schema = next(iter(content.values()), {}).get("schema", {})
-    return {
+    options = {
         field: value["enum"]
         for field, value in schema.get("properties", {}).items()
         if field in FIELDS and value.get("enum")
     }
+    locations = {field: "body" for field in options}
+    for parameter in [*paths[path].get("parameters", []), *operation.get("parameters", [])]:
+        field = parameter.get("name", "")
+        location = parameter.get("in")
+        if location == "header":
+            field = field.lower()
+        models = parameter.get("schema", {}).get("enum")
+        if field not in FIELDS or not models:
+            continue
+        if field in locations and locations[field] != location:
+            raise ValueError(f"Review ambiguous model parameter {path}/{field}")
+        options[field] = models
+        locations[field] = location
+    return options, locations
 
 
 def public_snapshot(contracts, acemusic):
@@ -45,17 +59,20 @@ def public_snapshot(contracts, acemusic):
         apis = dict(pool.map(read_api, ids))
     snapshot = {}
     for name, endpoint in contracts.items():
-        options = model_options(apis[endpoint["api_id"]], endpoint["path"])
+        options, locations = model_options(apis[endpoint["api_id"]], endpoint["path"])
         if options:
             snapshot[name] = {
                 "api_id": endpoint["api_id"],
                 "path": endpoint["path"],
                 "options": options,
+                "locations": locations,
             }
+    options, locations = model_options(apis[acemusic["api_id"]], "/acemusic/audios")
     snapshot["acemusic"] = {
         "api_id": acemusic["api_id"],
         "path": "/acemusic/audios",
-        "options": model_options(apis[acemusic["api_id"]], "/acemusic/audios"),
+        "options": options,
+        "locations": locations,
     }
     return snapshot
 
@@ -75,14 +92,32 @@ def apply(snapshot, root=ROOT, check=False):
         for field, models in entry["options"].items():
             if not models or len(models) != len(set(models)):
                 raise ValueError(f"Invalid model options for {name}/{field}")
-            if field not in endpoint["properties"]:
-                raise ValueError(f"Review the newly added model control {name}/{field}")
             default = endpoint.get("defaults", {}).get(field)
             if default not in (None, "") and default not in models:
                 raise ValueError(f"Review the retired default for {name}/{field}")
-            endpoint["properties"][field]["enum"] = models
-            if field in endpoint["schema"].get("properties", {}):
-                endpoint["schema"]["properties"][field]["enum"] = models
+            location = entry.get("locations", {}).get(field, "body")
+            if location == "body":
+                if field not in endpoint["properties"]:
+                    raise ValueError(f"Review the newly added model control {name}/{field}")
+                endpoint["properties"][field]["enum"] = models
+                if field in endpoint["schema"].get("properties", {}):
+                    endpoint["schema"]["properties"][field]["enum"] = models
+            else:
+                parameter = next(
+                    (
+                        p
+                        for p in endpoint.get("parameters", [])
+                        if p.get("in") == location
+                        and (p.get("name", "").lower() if location == "header" else p.get("name"))
+                        == field
+                    ),
+                    None,
+                )
+                if parameter is None or field in endpoint["properties"]:
+                    raise ValueError(
+                        f"Review changed parameter location for {name}/{field}: {location}"
+                    )
+                parameter["schema"]["enum"] = models
             if name in picker_by_name:
                 path, tool = picker_by_name[name]
                 parameter = next((p for p in tool["parameters"] if p["name"] == field), None)

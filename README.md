@@ -108,7 +108,7 @@ ruff check .
 ruff format --check .
 python scripts/sync_models.py --refresh
 python scripts/sync_models.py --check
-dify plugin package . -o ../ace_media-0.1.1.difypkg
+dify plugin package . -o ../ace_media-0.1.2.difypkg
 ```
 
 The normal test suite loads every tool through the real Dify SDK, replays source request-contract examples, checks original-task and batch behavior, and verifies model/picker/runtime parity. Tests use offline responses; they do not make paid calls. The new consolidated package has not been represented as a fresh Dify Cloud or live paid-generation acceptance. Source/CLI validation and official Marketplace publication are separate steps.
