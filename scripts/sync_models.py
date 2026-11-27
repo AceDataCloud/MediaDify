@@ -67,6 +67,10 @@ def public_snapshot(contracts, acemusic):
                 "options": options,
                 "locations": locations,
             }
+    # The three native Seedream tools validate against the same model-specific request rules.
+    seedream = snapshot["seedream_generate_image"]
+    operation = apis[seedream["api_id"]]["definition"]["paths"][seedream["path"]]["post"]
+    seedream["allOf"] = operation["requestBody"]["content"]["application/json"]["schema"]["allOf"]
     options, locations = model_options(apis[acemusic["api_id"]], "/acemusic/audios")
     snapshot["acemusic"] = {
         "api_id": acemusic["api_id"],
@@ -89,6 +93,8 @@ def apply(snapshot, root=ROOT, check=False):
         if name == "acemusic":
             continue
         endpoint = contracts[name]
+        if endpoint["path"] == "/seedream/images":
+            endpoint["schema"]["allOf"] = snapshot["seedream_generate_image"]["allOf"]
         for field, models in entry["options"].items():
             if not models or len(models) != len(set(models)):
                 raise ValueError(f"Invalid model options for {name}/{field}")

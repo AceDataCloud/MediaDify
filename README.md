@@ -10,7 +10,7 @@ One **Ace Data Cloud** provider brings **124 native tools across 25 service fami
 
 1. Download the `.difypkg` from this repository's release or review artifact. Use **Plugins → Install → Local Package** only where your Dify workspace permits local plugins. A source package does not carry Marketplace verification.
 2. Open **Integrations → Tools → Ace Media and Tools**. These are native Tools; chat-model selection remains in the separate Ace Data Cloud model provider.
-3. Sign in at [Ace Data Cloud Applications](https://platform.acedata.cloud/console/applications). If the General application has not been initialized, initialize it first. Copy an authorized existing key or create a dedicated key with an appropriate expiry and usage/API limits.
+3. Sign in at [Ace Data Cloud Applications](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen). If the General application has not been initialized, initialize it first. Copy an authorized existing key or create a dedicated key with an appropriate expiry and usage/API limits.
 4. In the Dify provider credential dialog, paste the **raw API token**, without `Bearer` or quotes. Do not use a platform management token. Restrict who may use the Dify credential.
 5. Save once. Saving only reads `/v1/models`; it does not generate media or run face/search tools. The key must be permitted to read that catalog. Saving validates the key, not entitlement or balance for every service.
 

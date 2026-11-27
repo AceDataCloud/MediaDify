@@ -821,9 +821,10 @@ def finalize_payload_seedream(
             raise ValueError("A reference image is required.")
         if operation != "decompose" and not body.get("prompt"):
             raise ValueError("A prompt is required.")
-        pro = body.get("model") == "doubao-seedream-5-0-pro-260628"
-        if pro:
-            body.pop("stream", None)
+        # Dify waits for task results. Seedream defaults to non-streaming and some
+        # models reject even an explicit false stream field.
+        body.pop("stream", None)
+        if body.get("model") == "doubao-seedream-5-0-pro-260628":
             images = body.get("image", [])
             images = images if isinstance(images, list) else [images]
             if len(images) > 10:
@@ -832,8 +833,6 @@ def finalize_payload_seedream(
                 raise ValueError(
                     "Sequential generation and web search require a supporting Lite model."
                 )
-        elif body.get("background") or body.get("layer_decomposition"):
-            raise ValueError("Layer decomposition and background control require Seedream 5.0 Pro.")
         if body.get("layer_decomposition") and body.get("background"):
             raise ValueError("Layer decomposition and background control cannot be combined.")
         if body.get("background") == "transparent":

@@ -2,10 +2,12 @@ import json
 from pathlib import Path
 
 import dify_plugin  # noqa: F401 - patch before HTTP imports
+import pytest
 import yaml
 
 from scripts.sync_models import apply, model_options
 from tools.api_contracts import ENDPOINTS
+from tools.client import AceMediaClient
 
 
 def test_live_source_snapshot_matches_every_runtime_enum_and_native_picker():
@@ -83,3 +85,22 @@ def test_public_parameter_location_is_preserved_without_assuming_body():
     }
     options, locations = model_options(api, "/fish/tts")
     assert options == {"model": models} and locations == {"model": "header"}
+
+
+@pytest.mark.parametrize(
+    ("tool", "inputs"),
+    [
+        ("seedream_generate_image", {"prompt": "A red flower"}),
+        ("seedream_edit_image", {"prompt": "Make it blue", "image": "https://example.org/ref.png"}),
+    ],
+)
+def test_every_seedream_picker_model_builds_a_valid_request(tool, inputs):
+    client = AceMediaClient("fixture")
+    for model in ENDPOINTS[tool]["properties"]["model"]["enum"]:
+        method, path, body, *_ = client.prepare(tool, {**inputs, "model": model})
+        assert (method, path, body["model"]) == ("POST", "/seedream/images", model)
+    with pytest.raises(ValueError):
+        client.prepare(
+            tool,
+            {**inputs, "model": "doubao-seedream-5-5-261028", "tools": '[{"type":"web_search"}]'},
+        )

@@ -35,6 +35,14 @@ parameters:
     label:
       en_US: doubao-seedream-5-0-lite-260128
       zh_Hans: doubao-seedream-5-0-lite-260128
+  - value: doubao-seedream-5-5-261028
+    label:
+      en_US: doubao-seedream-5-5-261028
+      zh_Hans: doubao-seedream-5-5-261028
+  - value: doubao-seedream-5-0-flash-260915
+    label:
+      en_US: doubao-seedream-5-0-flash-260915
+      zh_Hans: doubao-seedream-5-0-flash-260915
   - value: doubao-seedream-4-0-250828
     label:
       en_US: doubao-seedream-4-0-250828

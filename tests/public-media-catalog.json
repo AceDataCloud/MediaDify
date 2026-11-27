@@ -1031,6 +1031,16 @@
       ]
     },
     {
+      "key": "image:doubao-seedream-5-0-flash-260915",
+      "id": "doubao-seedream-5-0-flash-260915",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "seedream",
+      "api_ids": [
+        "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e"
+      ]
+    },
+    {
       "key": "image:doubao-seedream-5-0-lite-260128",
       "id": "doubao-seedream-5-0-lite-260128",
       "kind": "model",
@@ -1043,6 +1053,16 @@
     {
       "key": "image:doubao-seedream-5-0-pro-260628",
       "id": "doubao-seedream-5-0-pro-260628",
+      "kind": "model",
+      "modality": "image",
+      "service_alias": "seedream",
+      "api_ids": [
+        "86ad30f3-0bc8-4b9b-b019-b9fa5b05672e"
+      ]
+    },
+    {
+      "key": "image:doubao-seedream-5-5-261028",
+      "id": "doubao-seedream-5-5-261028",
       "kind": "model",
       "modality": "image",
       "service_alias": "seedream",
