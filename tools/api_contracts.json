@@ -10625,26 +10625,6 @@
         {
           "oneOf": [
             {
-              "required": [
-                "image",
-                "layer_decomposition"
-              ],
-              "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-pro-260628"
-                  ]
-                },
-                "layer_decomposition": {
-                  "enum": [
-                    true
-                  ]
-                },
-                "size": {
-                  "type": "string",
-                  "pattern": "^(auto|1K|1\\.5K|2K)$"
-                }
-              },
               "not": {
                 "anyOf": [
                   {
@@ -10668,18 +10648,79 @@
                     ]
                   }
                 ]
+              },
+              "title": "Seedream 5.5 layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 1,
+                      "minItems": 1
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-5-261028"
+                  ]
+                },
+                "response_format": {
+                  "enum": [
+                    "url"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
               }
             },
             {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.5 image generation and editing",
               "required": [
                 "prompt"
               ],
               "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-pro-260628"
-                  ]
-                },
                 "size": {
                   "type": "string",
                   "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
@@ -10697,8 +10738,36 @@
                       "maxItems": 10
                     }
                   ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-5-261028"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "auto",
+                    "transparent",
+                    "opaque"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    false
+                  ]
+                },
+                "optimize_prompt_options": {
+                  "properties": {
+                    "mode": {
+                      "enum": [
+                        "standard"
+                      ]
+                    }
+                  }
                 }
-              },
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -10715,26 +10784,126 @@
                     "required": [
                       "tools"
                     ]
+                  },
+                  {
+                    "required": [
+                      "background"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
+              },
+              "title": "Seedream 5.0 Flash layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 1,
+                      "minItems": 1
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-flash-260915"
+                  ]
+                },
+                "response_format": {
+                  "enum": [
+                    "url"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
               }
             },
             {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.0 Flash image generation and editing",
               "required": [
                 "prompt"
               ],
               "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-lite-260128"
-                  ]
-                },
                 "size": {
                   "type": "string",
-                  "pattern": "^(2K|3K|4K|[0-9]+x[0-9]+)$"
+                  "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 10
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-flash-260915"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "transparent",
+                    "opaque"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    false
+                  ]
                 },
                 "optimize_prompt_options": {
-                  "type": "object",
                   "properties": {
                     "mode": {
                       "enum": [
@@ -10743,7 +10912,122 @@
                     }
                   }
                 }
+              }
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "background"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
               },
+              "title": "Seedream 5.0 Pro layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-pro-260628"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
+              }
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.0 Pro image generation and editing",
+              "required": [
+                "prompt"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 10
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-pro-260628"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "transparent",
+                    "opaque"
+                  ]
+                }
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -10755,22 +11039,41 @@
                     "required": [
                       "background"
                     ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
-              }
-            },
-            {
+              },
+              "title": "Seedream 5.0 Lite",
               "required": [
                 "prompt"
               ],
               "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(2K|3K|4K|[0-9]+x[0-9]+)$"
+                },
                 "model": {
                   "enum": [
-                    "doubao-seedream-4-0-250828",
-                    "doubao-seedream-4-5-251128"
+                    "doubao-seedream-5-0-lite-260128"
                   ]
+                },
+                "optimize_prompt_options": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "enum": [
+                        "standard"
+                      ]
+                    }
+                  }
                 }
-              },
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -10792,8 +11095,25 @@
                     "required": [
                       "tools"
                     ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
+              },
+              "title": "Seedream 4.x",
+              "required": [
+                "prompt"
+              ],
+              "properties": {
+                "model": {
+                  "enum": [
+                    "doubao-seedream-4-0-250828",
+                    "doubao-seedream-4-5-251128"
+                  ]
+                }
               }
             }
           ]
@@ -11077,26 +11397,6 @@
         {
           "oneOf": [
             {
-              "required": [
-                "image",
-                "layer_decomposition"
-              ],
-              "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-pro-260628"
-                  ]
-                },
-                "layer_decomposition": {
-                  "enum": [
-                    true
-                  ]
-                },
-                "size": {
-                  "type": "string",
-                  "pattern": "^(auto|1K|1\\.5K|2K)$"
-                }
-              },
               "not": {
                 "anyOf": [
                   {
@@ -11120,18 +11420,79 @@
                     ]
                   }
                 ]
+              },
+              "title": "Seedream 5.5 layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 1,
+                      "minItems": 1
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-5-261028"
+                  ]
+                },
+                "response_format": {
+                  "enum": [
+                    "url"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
               }
             },
             {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.5 image generation and editing",
               "required": [
                 "prompt"
               ],
               "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-pro-260628"
-                  ]
-                },
                 "size": {
                   "type": "string",
                   "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
@@ -11149,8 +11510,36 @@
                       "maxItems": 10
                     }
                   ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-5-261028"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "auto",
+                    "transparent",
+                    "opaque"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    false
+                  ]
+                },
+                "optimize_prompt_options": {
+                  "properties": {
+                    "mode": {
+                      "enum": [
+                        "standard"
+                      ]
+                    }
+                  }
                 }
-              },
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -11167,26 +11556,126 @@
                     "required": [
                       "tools"
                     ]
+                  },
+                  {
+                    "required": [
+                      "background"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
+              },
+              "title": "Seedream 5.0 Flash layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 1,
+                      "minItems": 1
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-flash-260915"
+                  ]
+                },
+                "response_format": {
+                  "enum": [
+                    "url"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
               }
             },
             {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.0 Flash image generation and editing",
               "required": [
                 "prompt"
               ],
               "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-lite-260128"
-                  ]
-                },
                 "size": {
                   "type": "string",
-                  "pattern": "^(2K|3K|4K|[0-9]+x[0-9]+)$"
+                  "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 10
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-flash-260915"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "transparent",
+                    "opaque"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    false
+                  ]
                 },
                 "optimize_prompt_options": {
-                  "type": "object",
                   "properties": {
                     "mode": {
                       "enum": [
@@ -11195,7 +11684,122 @@
                     }
                   }
                 }
+              }
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "background"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
               },
+              "title": "Seedream 5.0 Pro layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-pro-260628"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
+              }
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.0 Pro image generation and editing",
+              "required": [
+                "prompt"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 10
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-pro-260628"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "transparent",
+                    "opaque"
+                  ]
+                }
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -11207,22 +11811,41 @@
                     "required": [
                       "background"
                     ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
-              }
-            },
-            {
+              },
+              "title": "Seedream 5.0 Lite",
               "required": [
                 "prompt"
               ],
               "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(2K|3K|4K|[0-9]+x[0-9]+)$"
+                },
                 "model": {
                   "enum": [
-                    "doubao-seedream-4-0-250828",
-                    "doubao-seedream-4-5-251128"
+                    "doubao-seedream-5-0-lite-260128"
                   ]
+                },
+                "optimize_prompt_options": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "enum": [
+                        "standard"
+                      ]
+                    }
+                  }
                 }
-              },
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -11244,8 +11867,25 @@
                     "required": [
                       "tools"
                     ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
+              },
+              "title": "Seedream 4.x",
+              "required": [
+                "prompt"
+              ],
+              "properties": {
+                "model": {
+                  "enum": [
+                    "doubao-seedream-4-0-250828",
+                    "doubao-seedream-4-5-251128"
+                  ]
+                }
               }
             }
           ]
@@ -11529,26 +12169,6 @@
         {
           "oneOf": [
             {
-              "required": [
-                "image",
-                "layer_decomposition"
-              ],
-              "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-pro-260628"
-                  ]
-                },
-                "layer_decomposition": {
-                  "enum": [
-                    true
-                  ]
-                },
-                "size": {
-                  "type": "string",
-                  "pattern": "^(auto|1K|1\\.5K|2K)$"
-                }
-              },
               "not": {
                 "anyOf": [
                   {
@@ -11572,18 +12192,79 @@
                     ]
                   }
                 ]
+              },
+              "title": "Seedream 5.5 layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 1,
+                      "minItems": 1
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-5-261028"
+                  ]
+                },
+                "response_format": {
+                  "enum": [
+                    "url"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
               }
             },
             {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.5 image generation and editing",
               "required": [
                 "prompt"
               ],
               "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-pro-260628"
-                  ]
-                },
                 "size": {
                   "type": "string",
                   "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
@@ -11601,8 +12282,36 @@
                       "maxItems": 10
                     }
                   ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-5-261028"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "auto",
+                    "transparent",
+                    "opaque"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    false
+                  ]
+                },
+                "optimize_prompt_options": {
+                  "properties": {
+                    "mode": {
+                      "enum": [
+                        "standard"
+                      ]
+                    }
+                  }
                 }
-              },
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -11619,26 +12328,126 @@
                     "required": [
                       "tools"
                     ]
+                  },
+                  {
+                    "required": [
+                      "background"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
+              },
+              "title": "Seedream 5.0 Flash layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 1,
+                      "minItems": 1
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-flash-260915"
+                  ]
+                },
+                "response_format": {
+                  "enum": [
+                    "url"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
               }
             },
             {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.0 Flash image generation and editing",
               "required": [
                 "prompt"
               ],
               "properties": {
-                "model": {
-                  "enum": [
-                    "doubao-seedream-5-0-lite-260128"
-                  ]
-                },
                 "size": {
                   "type": "string",
-                  "pattern": "^(2K|3K|4K|[0-9]+x[0-9]+)$"
+                  "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 10
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-flash-260915"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "transparent",
+                    "opaque"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    false
+                  ]
                 },
                 "optimize_prompt_options": {
-                  "type": "object",
                   "properties": {
                     "mode": {
                       "enum": [
@@ -11647,7 +12456,122 @@
                     }
                   }
                 }
+              }
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "background"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
               },
+              "title": "Seedream 5.0 Pro layer decomposition",
+              "required": [
+                "image",
+                "layer_decomposition"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(auto|1K|1\\.5K|2K)$"
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-pro-260628"
+                  ]
+                },
+                "layer_decomposition": {
+                  "enum": [
+                    true
+                  ]
+                }
+              }
+            },
+            {
+              "not": {
+                "anyOf": [
+                  {
+                    "required": [
+                      "sequential_image_generation"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "stream"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "tools"
+                    ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
+                  }
+                ]
+              },
+              "title": "Seedream 5.0 Pro image generation and editing",
+              "required": [
+                "prompt"
+              ],
+              "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(1K|1\\.5K|2K|[0-9]+x[0-9]+)$"
+                },
+                "image": {
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      },
+                      "maxItems": 10
+                    }
+                  ]
+                },
+                "model": {
+                  "enum": [
+                    "doubao-seedream-5-0-pro-260628"
+                  ]
+                },
+                "background": {
+                  "enum": [
+                    "transparent",
+                    "opaque"
+                  ]
+                }
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -11659,22 +12583,41 @@
                     "required": [
                       "background"
                     ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
-              }
-            },
-            {
+              },
+              "title": "Seedream 5.0 Lite",
               "required": [
                 "prompt"
               ],
               "properties": {
+                "size": {
+                  "type": "string",
+                  "pattern": "^(2K|3K|4K|[0-9]+x[0-9]+)$"
+                },
                 "model": {
                   "enum": [
-                    "doubao-seedream-4-0-250828",
-                    "doubao-seedream-4-5-251128"
+                    "doubao-seedream-5-0-lite-260128"
                   ]
+                },
+                "optimize_prompt_options": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "enum": [
+                        "standard"
+                      ]
+                    }
+                  }
                 }
-              },
+              }
+            },
+            {
               "not": {
                 "anyOf": [
                   {
@@ -11696,8 +12639,25 @@
                     "required": [
                       "tools"
                     ]
+                  },
+                  {
+                    "required": [
+                      "layer_decomposition_options"
+                    ]
                   }
                 ]
+              },
+              "title": "Seedream 4.x",
+              "required": [
+                "prompt"
+              ],
+              "properties": {
+                "model": {
+                  "enum": [
+                    "doubao-seedream-4-0-250828",
+                    "doubao-seedream-4-5-251128"
+                  ]
+                }
               }
             }
           ]
