@@ -139,6 +139,9 @@ tools:
 - tools/acemusic_retrieve.yaml
 - tools/acemusic_batch.yaml
 - tools/acemusic_history.yaml
+- tools/acemusic_upload_asset.yaml
+- tools/acemusic_get_asset.yaml
+- tools/acemusic_list_assets.yaml
 - tools/digitalhuman_generate_video.yaml
 - tools/digitalhuman_get_task.yaml
 - tools/digitalhuman_list_tasks.yaml

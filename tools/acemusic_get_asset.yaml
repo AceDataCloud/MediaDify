@@ -1,0 +1,31 @@
+identity:
+  name: acemusic_get_asset
+  author: acedatacloud
+  label:
+    en_US: Get reference asset
+    zh_Hans: 查询参考素材
+description:
+  human:
+    en_US: Read one owned asset by its asset ID for free.
+    zh_Hans: 查询参考素材
+  llm: Read one owned asset by its asset ID for free.
+parameters:
+- name: id
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Asset ID
+    zh_Hans: 素材 ID
+  human_description:
+    en_US: Asset ID
+    zh_Hans: 素材 ID
+  llm_description: Asset ID
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+extra:
+  python:
+    source: tools/acemusic_get_asset.py

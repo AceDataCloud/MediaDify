@@ -52,6 +52,8 @@ def build_request(operation, values):
             raise ValueError(f"Invalid {field}")
         elif kind == "model" and value not in MODELS:
             raise ValueError("Unknown ACE Music model")
+        elif kind == "asset_type" and value not in ("midi", "image", "video"):
+            raise ValueError("Choose midi, image or video")
         elif kind == "url":
             parsed = urlsplit(value)
             if (
@@ -60,8 +62,13 @@ def build_request(operation, values):
                 or parsed.username
                 or parsed.password
             ):
-                raise ValueError("Provide a public HTTPS MP3 URL")
+                raise ValueError("Provide a public HTTPS URL")
         body[entry["key"]] = value
+    if operation == "generate" and ("asset_id" in body or "asset_type" in body):
+        if not (body.get("asset_id") and body.get("asset_type")):
+            raise ValueError("Provide both asset ID and asset type")
+        if body.get("model", "acemusic-v1.1") != "acemusic-v1.1":
+            raise ValueError("Reference assets require acemusic-v1.1")
     if operation == "mashup":
         ids = [body.pop("first_audio_id"), body.pop("second_audio_id")]
         if ids[0] == ids[1]:

@@ -1,6 +1,6 @@
 # Dify Ace 媒体与工具
 
-一个 **Ace Data Cloud** 供应商整合 **25 个服务系列的 124 个当前原生工具**，覆盖图片、视频、音乐、语音、面部处理与搜索。每个服务保留独立工具名和参数，只需在供应商中配置一个通用应用 API Key。
+一个 **Ace Data Cloud** 供应商整合 **25 个服务系列的 127 个当前原生工具**，覆盖图片、视频、音乐、语音、面部处理与搜索。每个服务保留独立工具名和参数，只需在供应商中配置一个通用应用 API Key。
 
 **分发说明：**源码或 Release 包本身不代表已上架或获得 Marketplace Verified。请以[官方市场页面](https://marketplace.dify.ai/plugin/acedatacloud/ace_media)的当前状态为准；正式获准前，只能使用工作区允许的本地插件安装流程。整合和迁移时间由官方审核确定。本仓库不会自动卸载已有插件，也不会改写已有工作流。
 
@@ -44,7 +44,7 @@
 | Suno | 19 | [Source adapter](https://github.com/AceDataCloud/SunoDify) |
 | Veo | 3 | [Source adapter](https://github.com/AceDataCloud/VeoDify) |
 | Wan | 4 | [Source adapter](https://github.com/AceDataCloud/WanDify) |
-| ACE Music | 9 | [Source adapter](https://github.com/AceDataCloud/ACEMusicDify) |
+| ACE Music | 12 | [Source adapter](https://github.com/AceDataCloud/ACEMusicDify) |
 | Digital Human | 5 | [Public video API](https://platform.acedata.cloud/api/v1/apis/5ced04db-8d92-4a6b-b988-91423dcc1f02/) |
 | Dreamina OmniHuman 1.5 | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/b3880780-678f-4495-bda7-3a1ecf42781c/) |
 | Gemini Omni Flash Video | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/d9d2fd18-5b1e-4218-b572-a75cf46f5451/) |
@@ -67,7 +67,7 @@ Maestro 支持生成、改编、编辑和延长；修改已有作品需要原 `r
 3. 把原任务 ID 绑定到**同一服务**的任务查询工具。仍在处理时继续查询原 ID，或使用支持的有界等待选项；不要重新调用生成来查询进度。
 4. 只使用已完成结果。通用工具输出状态、数据、媒体链接和逐项批任务状态；ACE Music 保留原始 `result`，包括部分失败状态及 `response.data[].audio_url` 中可用的音轨。
 
-创建超时且未拿到任务 ID 时，先查原请求和任务历史，再决定是否重提。插件不自动重试付费提交。搜索、面部处理等同步工具直接返回结果。引用素材必须符合所选 API 的可访问 URL 要求；ACE Music 引用导入需要公共 HTTPS MP3 URL。插件把引用地址交给 API，不自行抓取任意 URL；回调地址应由你控制。
+创建超时且未拿到任务 ID 时，先查原请求和任务历史，再决定是否重提。插件不自动重试付费提交。搜索、面部处理等同步工具直接返回结果。引用素材必须符合所选 API 的可访问 URL 要求；ACE Music 可从公开 HTTPS 地址导入已开放的 MIDI、图片和视频，免费查询本人素材，再将素材 ID 和类型用于 v1.1 灵感创作。MP3 音轨使用独立的音频导入工具。插件把引用地址交给 API，不自行抓取任意 URL；回调地址应由你控制。
 
 ## 整合与迁移
 

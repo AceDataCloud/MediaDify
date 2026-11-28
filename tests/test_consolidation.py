@@ -31,7 +31,7 @@ def test_one_provider_keeps_all_original_native_tool_names_and_loads_each_implem
     expected = {name for source in SOURCES for name in source["tool_names"]}
     retired = {row["tool"] for row in json.loads(Path("tests/retired-tools.json").read_text())}
     expected -= retired
-    assert len(expected) == 124 and len(SOURCES) == 25
+    assert len(expected) == 127 and len(SOURCES) == 25
     assert set(actual) == expected
     for name in expected:
         assert registration.get_tool_cls("ace_media", name) is not None
@@ -96,9 +96,9 @@ def test_audio_services_keep_audio_outputs_ahead_of_optional_unrendered_video(mo
     assert result["media_urls"] == ["https://example.org/song.mp3"]
 
 
-def test_acemusic_preserves_all_nine_exact_wire_contracts():
+def test_acemusic_preserves_all_exact_wire_contracts():
     cases = json.loads(Path("tests/acemusic-requests.json").read_text())
-    assert len(cases) == 9
+    assert len(cases) == 12
     for operation, (inputs, expected) in cases.items():
         assert list(build_request(operation, inputs)) == expected
 

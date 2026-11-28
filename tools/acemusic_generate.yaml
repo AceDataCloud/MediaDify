@@ -37,6 +37,38 @@ parameters:
     label:
       en_US: acemusic-v1
       zh_Hans: acemusic-v1
+- name: asset_id
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Owned reference asset ID
+    zh_Hans: 本人参考素材 ID
+  human_description:
+    en_US: Owned reference asset ID
+    zh_Hans: 本人参考素材 ID
+  llm_description: Owned reference asset ID
+- name: asset_type
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Reference asset type
+    zh_Hans: 参考素材类型
+  human_description:
+    en_US: Reference asset type
+    zh_Hans: 参考素材类型
+  llm_description: Reference asset type
+  options:
+  - value: midi
+    label:
+      en_US: MIDI
+  - value: image
+    label:
+      en_US: Image
+  - value: video
+    label:
+      en_US: Video
 output_schema:
   type: object
   properties:

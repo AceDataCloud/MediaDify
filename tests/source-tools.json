@@ -281,7 +281,10 @@
       "acemusic_lyrics",
       "acemusic_retrieve",
       "acemusic_batch",
-      "acemusic_history"
+      "acemusic_history",
+      "acemusic_upload_asset",
+      "acemusic_get_asset",
+      "acemusic_list_assets"
     ],
     "old_plugin_id": "acedatacloud/acemusic",
     "task_path": "/acemusic/tasks"
