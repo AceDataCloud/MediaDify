@@ -10,7 +10,7 @@
 
 1. 从本仓库 Release 或审核附件下载 `.difypkg`。仅在工作区允许本地插件时，通过 **Plugins → Install → Local Package** 安装。源码安装包不代表官方市场验证。
 2. 打开 **Integrations → Tools → Ace 媒体与工具**。这是原生工具供应商；聊天模型选择仍属于独立的 Ace Data Cloud 模型供应商。
-3. 登录 [Ace Data Cloud 我的应用](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen)。如果尚未初始化通用应用，先初始化，再复制已有获授权 Key 或创建带有效期、用量与 API 限制的专用 Key。
+3. 登录 [Ace Data Cloud 我的应用](https://platform.acedata.cloud/console/applications?utm_source=opensource&utm_medium=referral&utm_campaign=evergreen)。打开**通用应用**，复制已有获授权 Key 或创建带有效期、用量与 API 限制的专用 Key。
 4. 在 Dify 供应商凭据窗口粘贴原始 API Token，不加 `Bearer` 或引号，不使用平台管理 Token，并限制谁能使用该凭据。
 5. 保存一次。保存只读 `/v1/models`，不运行生成、面部处理或搜索；Key 必须允许读取该目录。保存成功只证明 Key 可验证，不代表所有服务权限和余额都充足。
 
