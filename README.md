@@ -1,6 +1,6 @@
 # Ace Media and Tools for Dify
 
-One **Ace Data Cloud** provider brings **124 native tools across 25 service families** into Dify. It consolidates the existing image, video, music, speech, face and search integrations. Each service keeps its own tool names and controls; one General application API key is configured on the provider.
+One **Ace Data Cloud** provider brings **127 native tools across 25 service families** into Dify. It consolidates the existing image, video, music, speech, face and search integrations. Each service keeps its own tool names and controls; one General application API key is configured on the provider.
 
 **Distribution:** source/release packages alone do not establish a Marketplace listing or Verified status. Check the [official Marketplace page](https://marketplace.dify.ai/plugin/acedatacloud/ace_media) for current availability; until accepted, use only your workspace's permitted local-package flow. The official consolidation review determines the transition schedule. No existing plugin is uninstalled, and no existing workflow is changed automatically.
 
@@ -44,7 +44,7 @@ Search by the service name in the Dify tool picker. Existing tool IDs and reques
 | Suno | 19 | [Source adapter](https://github.com/AceDataCloud/SunoDify) |
 | Veo | 3 | [Source adapter](https://github.com/AceDataCloud/VeoDify) |
 | Wan | 4 | [Source adapter](https://github.com/AceDataCloud/WanDify) |
-| ACE Music | 9 | [Source adapter](https://github.com/AceDataCloud/ACEMusicDify) |
+| ACE Music | 12 | [Source adapter](https://github.com/AceDataCloud/ACEMusicDify) |
 | Digital Human | 5 | [Public video API](https://platform.acedata.cloud/api/v1/apis/5ced04db-8d92-4a6b-b988-91423dcc1f02/) |
 | Dreamina OmniHuman 1.5 | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/b3880780-678f-4495-bda7-3a1ecf42781c/) |
 | Gemini Omni Flash Video | 3 | [Public video API](https://platform.acedata.cloud/api/v1/apis/d9d2fd18-5b1e-4218-b572-a75cf46f5451/) |
@@ -69,7 +69,7 @@ The full public media catalog is checked by API operation in addition to existin
 
 When creation times out before returning a task ID, inspect the original request or task history before resubmitting. Paid submissions are not retried automatically. Completed media links can expire; follow your own retention requirements. Synchronous tools, such as search or face processing, return their result directly.
 
-Reference images, audio and video must be accessible URLs supported by the selected operation. ACE Music reference import requires a public HTTPS MP3 URL. Use material and voices you are authorized to process. The plugin passes references to Ace Data Cloud; it does not fetch arbitrary URLs itself. If you supply a callback URL, use a destination you control.
+Reference images, audio and video must be accessible URLs supported by the selected operation. For enabled ACE Music reference types, import a MIDI, image or video from a public HTTPS URL, retrieve your asset, then pair its ID and type when generating a v1.1 song. MP3 track import is a separate operation. Use material and voices you are authorized to process. The plugin passes references to Ace Data Cloud; it does not fetch arbitrary URLs itself. If you supply a callback URL, use a destination you control.
 
 ## Consolidation and existing workflows
 

@@ -137,5 +137,48 @@
         "page_size": 10
       }
     ]
+  ],
+  "upload_asset": [
+    {
+      "type": "midi",
+      "url": "https://example.com/song.mid"
+    },
+    [
+      "assets",
+      {
+        "action": "upload",
+        "async": true,
+        "type": "midi",
+        "url": "https://example.com/song.mid"
+      }
+    ]
+  ],
+  "get_asset": [
+    {
+      "id": "saved-asset"
+    },
+    [
+      "assets",
+      {
+        "action": "retrieve",
+        "id": "saved-asset"
+      }
+    ]
+  ],
+  "list_assets": [
+    {
+      "type": "image",
+      "page": 2,
+      "page_size": 20
+    },
+    [
+      "assets",
+      {
+        "action": "retrieve",
+        "type": "image",
+        "page": 2,
+        "page_size": 20
+      }
+    ]
   ]
 }

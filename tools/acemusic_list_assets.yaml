@@ -1,0 +1,63 @@
+identity:
+  name: acemusic_list_assets
+  author: acedatacloud
+  label:
+    en_US: List reference assets
+    zh_Hans: 列出参考素材
+description:
+  human:
+    en_US: Page through owned assets for free. Optionally filter by type.
+    zh_Hans: 列出参考素材
+  llm: Page through owned assets for free. Optionally filter by type.
+parameters:
+- name: type
+  type: select
+  required: false
+  form: llm
+  label:
+    en_US: Filter by type
+    zh_Hans: 按类型筛选
+  human_description:
+    en_US: Filter by type
+    zh_Hans: 按类型筛选
+  llm_description: Filter by type
+  options:
+  - value: midi
+    label:
+      en_US: MIDI
+  - value: image
+    label:
+      en_US: Image
+  - value: video
+    label:
+      en_US: Video
+- name: page
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Page number
+    zh_Hans: 页码
+  human_description:
+    en_US: Page number
+    zh_Hans: 页码
+  llm_description: Page number
+- name: page_size
+  type: number
+  required: false
+  form: llm
+  label:
+    en_US: Items per page
+    zh_Hans: 每页数量
+  human_description:
+    en_US: Items per page
+    zh_Hans: 每页数量
+  llm_description: Items per page
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+extra:
+  python:
+    source: tools/acemusic_list_assets.py

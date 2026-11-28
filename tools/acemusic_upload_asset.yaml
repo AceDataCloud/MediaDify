@@ -1,0 +1,65 @@
+identity:
+  name: acemusic_upload_asset
+  author: acedatacloud
+  label:
+    en_US: Import reference asset
+    zh_Hans: 导入参考素材
+description:
+  human:
+    en_US: Submit one paid MIDI, image or video import where enabled. Save the original task ID.
+    zh_Hans: 导入参考素材
+  llm: Submit one paid MIDI, image or video import where enabled. Save the original task ID.
+parameters:
+- name: type
+  type: select
+  required: true
+  form: llm
+  label:
+    en_US: Asset type
+    zh_Hans: 素材类型
+  human_description:
+    en_US: Asset type
+    zh_Hans: 素材类型
+  llm_description: Asset type
+  options:
+  - value: midi
+    label:
+      en_US: MIDI
+  - value: image
+    label:
+      en_US: Image
+  - value: video
+    label:
+      en_US: Video
+- name: url
+  type: string
+  required: true
+  form: llm
+  label:
+    en_US: Public HTTPS file URL
+    zh_Hans: 公开 HTTPS 文件地址
+  human_description:
+    en_US: Public HTTPS file URL
+    zh_Hans: 公开 HTTPS 文件地址
+  llm_description: Public HTTPS file URL
+- name: name
+  type: string
+  required: false
+  form: llm
+  label:
+    en_US: Display name
+    zh_Hans: 显示名称
+  human_description:
+    en_US: Display name
+    zh_Hans: 显示名称
+  llm_description: Display name
+output_schema:
+  type: object
+  properties:
+    result:
+      type: object
+    task_id:
+      type: string
+extra:
+  python:
+    source: tools/acemusic_upload_asset.py

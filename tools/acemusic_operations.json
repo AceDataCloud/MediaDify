@@ -16,6 +16,16 @@
         "key": "model",
         "kind": "model",
         "required": false
+      },
+      "asset_id": {
+        "key": "asset_id",
+        "kind": "text",
+        "required": false
+      },
+      "asset_type": {
+        "key": "asset_type",
+        "kind": "asset_type",
+        "required": false
       }
     },
     "api_id": "4c52eae4-e361-5ccb-9af4-1892e918649f"
@@ -216,5 +226,68 @@
       }
     },
     "api_id": "cd422d13-3e61-5d2e-88fc-7281ff471565"
+  },
+  "upload_asset": {
+    "endpoint": "assets",
+    "body": {
+      "action": "upload",
+      "async": true
+    },
+    "fields": {
+      "type": {
+        "key": "type",
+        "kind": "asset_type",
+        "required": true
+      },
+      "url": {
+        "key": "url",
+        "kind": "url",
+        "required": true
+      },
+      "name": {
+        "key": "name",
+        "kind": "text",
+        "required": false
+      }
+    },
+    "api_id": "64b99ab2-e475-5229-bc45-4f291c2e9fc2"
+  },
+  "get_asset": {
+    "endpoint": "assets",
+    "body": {
+      "action": "retrieve"
+    },
+    "fields": {
+      "id": {
+        "key": "id",
+        "kind": "text",
+        "required": true
+      }
+    },
+    "api_id": "64b99ab2-e475-5229-bc45-4f291c2e9fc2"
+  },
+  "list_assets": {
+    "endpoint": "assets",
+    "body": {
+      "action": "retrieve"
+    },
+    "fields": {
+      "type": {
+        "key": "type",
+        "kind": "asset_type",
+        "required": false
+      },
+      "page": {
+        "key": "page",
+        "kind": "page",
+        "required": false
+      },
+      "page_size": {
+        "key": "page_size",
+        "kind": "size",
+        "required": false
+      }
+    },
+    "api_id": "64b99ab2-e475-5229-bc45-4f291c2e9fc2"
   }
 }
